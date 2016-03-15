@@ -26,13 +26,15 @@ def postContent(request):
 
     category = request.POST.get('category', 'no')
     content = request.POST.get('content', 'no content')
+    title = '这个是标题'
+    user_name = 'yuxiangxiang'
 
     # 插入 <meta charset="UTF-8">
-    content.replace('<head>', '<head><meta charset="UTF-8">')
+    content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">')
 
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
-    file = settings.STATIC_ROOT + '/' + file_name
+    file = settings.STATIC_ROOT + '/' + user_name + '/' + file_name
     html = open(file, 'w', encoding='utf-8')
     html.write(content)
     html.close()
