@@ -11,8 +11,8 @@ from urllib import parse
 from urllib import request as urlRequest
 from importlib import import_module
 from qiniu import Auth, put_file
-from TimeHouseServer import logger
-
+from TimeHouseServer import logger, settings
+from .constant import constant
 # Create your views here.
 
 @csrf_exempt
@@ -22,8 +22,21 @@ def postContent(request):
     :param request:
     :return:
     """
-    logger.info(request)
-    return HttpResponse("SUCCESS")
+    logger.info('get request')
+
+    category = request.POST.get('category', 'no')
+    content = request.POST.get('content', 'no content')
+
+    #创建文件 settings.STATIC_ROOT + filename
+    file_name = constant.getHtmlFileName(category)
+    file = settings.STATIC_ROOT + '/' + file_name
+    html = open(file, 'w', encoding='utf-8')
+    html.write(content)
+    html.close()
+
+    logger.info('saved success')
+
+    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75/static/" + file_name)
 
 
 def editor(request):
