@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    {% load wysiwyg %}
+    {% wysiwyg_setup %}
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <textarea id="foo"></textarea>
+    {% wysiwyg_editor "foo" %}
+</body>
+</html>
