@@ -11,8 +11,19 @@ from urllib import parse
 from urllib import request as urlRequest
 from importlib import import_module
 from qiniu import Auth, put_file
+from TimeHouseServer import logger
 
 # Create your views here.
+
+
+def postContent(request):
+    """
+    提交最后的编辑内容
+    :param request:
+    :return:
+    """
+    logger.info(request)
+    return HttpResponse("SUCCESS")
 
 
 def editor(request):
