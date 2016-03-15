@@ -30,7 +30,8 @@ def postContent(request):
     user_name = 'yuxiangxiang'
 
     # 插入 <meta charset="UTF-8">
-    content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">')
+    # replace 方法不会改变原字符串，会返回替换后的内容。学java的表示呵呵呵
+    content = content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">')
 
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
@@ -39,7 +40,7 @@ def postContent(request):
 
     if not os.path.exists(path):
         os.mkdir(path)
-        
+
     html = open(file, 'w', encoding='utf-8')
 
     html.write(content)
