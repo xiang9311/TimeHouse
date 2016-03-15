@@ -111,3 +111,5 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 
+STATIC_ROOT = '/path/to/TimeHouse/static'
+MEDIA_ROOT = '/path/to/TimeHouse/media'
