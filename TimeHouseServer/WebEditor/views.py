@@ -15,7 +15,7 @@ from TimeHouseServer import logger
 
 # Create your views here.
 
-
+@csrf_exempt
 def postContent(request):
     """
     提交最后的编辑内容

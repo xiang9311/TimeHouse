@@ -43,21 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimeHouseServer/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0881671" vertical-offset="2533" max-vertical-offset="3344">
-              <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1849" max-vertical-offset="3344">
+              <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="6593">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.5" vertical-offset="114" max-vertical-offset="6593">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -103,8 +103,8 @@
         <option value="$PROJECT_DIR$/WebEditor/urls.py" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/index.html" />
         <option value="$PROJECT_DIR$/TimeHouseServer/logger.py" />
-        <option value="$PROJECT_DIR$/WebEditor/views.py" />
         <option value="$PROJECT_DIR$/TimeHouseServer/settings.py" />
+        <option value="$PROJECT_DIR$/WebEditor/views.py" />
       </list>
     </option>
   </component>
@@ -987,21 +987,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
+    <entry file="file://$PROJECT_DIR$/TimeHouseServer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="6593">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1849" max-vertical-offset="3344">
+          <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimeHouseServer/settings.py">
+    <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0881671" vertical-offset="2533" max-vertical-offset="3344">
-          <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.5" vertical-offset="114" max-vertical-offset="6593">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
