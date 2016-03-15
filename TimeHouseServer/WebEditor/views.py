@@ -31,7 +31,7 @@ def postContent(request):
 
     # 插入 <meta charset="UTF-8">
     # replace 方法不会改变原字符串，会返回替换后的内容。学java的表示呵呵呵
-    content = content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">')
+    content = content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">', 1)
 
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
@@ -48,7 +48,7 @@ def postContent(request):
 
     logger.info('saved success')
 
-    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75:8999/static/" + file_name)
+    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75:8999/static/" + user_name + '/' + file_name)
 
 
 def editor(request):
