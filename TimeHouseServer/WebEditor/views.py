@@ -27,6 +27,9 @@ def postContent(request):
     category = request.POST.get('category', 'no')
     content = request.POST.get('content', 'no content')
 
+    # 插入 <meta charset="UTF-8">
+    content.replace('<head>', '<head><meta charset="UTF-8">')
+
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
     file = settings.STATIC_ROOT + '/' + file_name
@@ -36,7 +39,7 @@ def postContent(request):
 
     logger.info('saved success')
 
-    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75/static/" + file_name)
+    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75:8999/static/" + file_name)
 
 
 def editor(request):
