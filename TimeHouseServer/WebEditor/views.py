@@ -34,8 +34,14 @@ def postContent(request):
 
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
-    file = settings.STATIC_ROOT + '/' + user_name + '/' + file_name
+    path = settings.STATIC_ROOT + '/' + user_name
+    file = path + '/' + file_name
+
+    if not os.path.exists(path):
+        os.mkdir(path)
+        
     html = open(file, 'w', encoding='utf-8')
+
     html.write(content)
     html.close()
 
