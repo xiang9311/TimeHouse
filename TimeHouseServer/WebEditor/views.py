@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 
 from django.views.decorators.csrf import csrf_exempt
 from . import settings as USettings
@@ -14,6 +14,78 @@ from qiniu import Auth, put_file
 from TimeHouseServer import logger, settings
 from .constant import constant
 # Create your views here.
+
+# KEYS = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m',
+#         'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M',
+#         '1','2','3','4','5','6','7','8','9','0']
+# keys_length = len(KEYS)
+# max_length = 7
+#
+# def generatorKey():
+#     """
+#     获取随机生成的图片名
+#     :return:
+#     """
+#     import random
+#     data = constant.getCurrentFileName()
+#     for i in range(0, max_length):
+#         data += KEYS[int(random.uniform(0, keys_length))]
+#     return data
+
+
+def getToken(request):
+    """
+    获取七牛token
+    :param request:
+    :return:
+    """
+    token = USettings.getQiniuTokenWithoutKey()
+    tokenDict = {}
+    tokenDict['uptoken'] = token
+    return HttpResponse(json.dumps(tokenDict, ensure_ascii=False))
+
+def editorPage(request):
+    """
+    获取编辑内容页
+    :param request:
+    :return:
+    """
+    pageType = request.GET.get('type','textEditor')
+    return render(request, 'WebEditor/'+pageType+'.html')
+
+
+def userDetail(request):
+    """
+    用户详情
+    :param request:
+    :return:
+    """
+    return render(request, 'WebEditor/userDetail.html')
+
+@csrf_exempt
+def register(request):
+    """
+    注册
+    :param request:
+    :return:
+    """
+    if request.method == 'POST':
+        # 注册成功后跳转
+        return HttpResponseRedirect('/web/userDetail/')
+    else:
+        return render(request, 'WebEditor/register.html')
+
+def login(request):
+    """
+    登录
+    :param request:
+    :return:
+    """
+    if request.method == 'POST':
+        return HttpResponseRedirect('/web/userDetail/')
+    else:
+        return render(request, 'WebEditor/login.html')
+
 
 @csrf_exempt
 def postContent(request):

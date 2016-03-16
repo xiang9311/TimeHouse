@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    {% load staticfiles %}
+    <title>文本编辑</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="{% static 'WebEditor/textEditor.config.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'WebEditor/ueditor.all.min.js' %}"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="{% static 'WebEditor/lang/zh-cn/zh-cn.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'WebEditor/jquery-1.7.1.min.js' %}"></script>
+
+    <link type="text/css" rel="stylesheet" href="{% static 'WebEditor/css/bootstrap.min.css' %}">
+    <style type="text/css">
+        div.container-left{
+            float: left;
+            width: 700px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        div.container-right{
+            float: left;
+            width: 350px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding-top: 15px">
+    <div class="container-left">
+        <script id="editor" type="text/plain" style="width:700px;height:500px;"></script>
+    </div>
+
+    <div class="container-right">
+        <div class="form-group">
+            <label>cover图：</label><button id="choose" type="button" class="btn btn-default">选择图片</button>
+            <img id="preview" style="width: 350px; height: 200px; margin-top: 6px;" src="" alt="cover">
+        </div>
+        <div class="form-group">
+            <label for="input-title">标题：</label>
+            <input id="inputTitle" type="text" class="form-control" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label for="inputSubContent">摘要：</label>
+            <textarea id="inputSubContent" type="text" rows="3" class="form-control" placeholder="subContent"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">分类：</label>
+            <select id="category" class="form-control">
+                <option value="time">时事</option>
+                <option value="history">历史</option>
+                <option value="culture">文化</option>
+                <option value="tec">科技</option>
+                <option value="haha">哈哈</option>
+                <option value="english">英文</option>
+                <option value="read">阅读</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="contentType">内容显示类型：</label>
+            <select id="contentType" class="form-control">
+                <option value="normal">普通类型</option>
+                <option value="shorttext">短文类型</option>
+                <option value="images">图文类型</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button id="post" class="btn btn-primary">发布</button>
+        </div>
+    </div>
+
+
+    <div id="btns">
+        <div>
+            <button id="postContent">发布</button>
+            <button onclick="getAllHtml()">获得整个html的内容</button>
+            <button onclick="getContent()">获得内容</button>
+            <button onclick="setContent()">写入内容</button>
+            <button onclick="setContent(true)">追加内容</button>
+            <button onclick="getContentTxt()">获得纯文本</button>
+            <button onclick="getPlainTxt()">获得带格式的纯文本</button>
+            <button onclick="hasContent()">判断是否有内容</button>
+            <button onclick="setFocus()">使编辑器获得焦点</button>
+            <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
+            <button onmousedown="setblur(event)" >编辑器失去焦点</button>
+
+        </div>
+        <div>
+            <button onclick="getText()">获得当前选中的文本</button>
+            <button onclick="insertHtml()">插入给定的内容</button>
+            <button id="enable" onclick="setEnabled()">可以编辑</button>
+            <button onclick="setDisabled()">不可编辑</button>
+            <button onclick=" UE.getEditor('editor').setHide()">隐藏编辑器</button>
+            <button onclick=" UE.getEditor('editor').setShow()">显示编辑器</button>
+            <button onclick=" UE.getEditor('editor').setHeight(300)">设置高度为300默认关闭了自动长高</button>
+        </div>
+
+        <div>
+            <button onclick="getLocalData()" >获取草稿箱内容</button>
+            <button onclick="clearLocalData()" >清空草稿箱</button>
+        </div>
+        <div>
+            <button onclick="createEditor()">
+            创建编辑器</button>
+            <button onclick="deleteEditor()">
+            删除编辑器</button>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="{% static 'WebEditor/plupload.full.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'WebEditor/qiniu.js' %}"></script>
+
+<!--以下是qiniu上传相关代码-->
+<script type="text/javascript">
+    var cover_key;
+    var uploader = Qiniu.uploader({
+       runtimes: 'html5,flash,html4',    //上传模式,依次退化
+       browse_button: 'choose',       //上传选择的点选按钮，**必需**
+       uptoken_url: '/web/getToken/',
+            //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+        // uptoken : '<Your upload token>',
+            //若未指定uptoken_url,则必须指定 uptoken ,uptoken由其他程序生成
+        // unique_names: true,
+            // 默认 false，key为文件名。若开启该选项，SDK会为每个文件自动生成key（文件名）
+        //save_key: true,
+            // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK在前端将不对key进行任何处理
+        domain: 'http://7xo9gq.com2.z0.glb.qiniucdn.com/',
+            //bucket 域名，下载资源时用到，**必需**
+        container: 'preview',           //上传区域DOM ID，默认是browser_button的父元素，
+        max_file_size: '100mb',           //最大文件体积限制
+        flash_swf_url: '{% static "WebEditor/Moxie.swf" %}',  //引入flash,相对路径
+        max_retries: 3,                   //上传失败最大重试次数
+        dragdrop: true,                   //开启可拖曳上传
+        drop_element: 'preview',        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+        chunk_size: '4mb',                //分块上传时，每片的体积
+        auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
+        init: {
+            'FilesAdded': function(up, files) {
+                plupload.each(files, function(file) {
+                    // 文件添加进队列后,处理相关的事情
+                });
+            },
+            'BeforeUpload': function(up, file) {
+                   // 每个文件上传前,处理相关的事情
+            },
+            'UploadProgress': function(up, file) {
+                   // 每个文件上传时,处理相关的事情
+            },
+            'FileUploaded': function(up, file, info) {
+                   // 每个文件上传成功后,处理相关的事情
+                   // 其中 info 是文件上传成功后，服务端返回的json，形式如
+                   // {
+                   //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+                   //    "key": "gogopher.jpg"
+                   //  }
+                var domain = up.getOption('domain');
+                var res = jQuery.parseJSON(info);
+                var sourceLink = domain + res.key + '?imageView2/1/w/700/h/400/q/90'; //获取上传成功后的文件的Url
+                cover_key = info.key;
+                document.getElementById('preview').src = sourceLink;
+                console.log(sourceLink);
+                   // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
+                   // var domain = up.getOption('domain');
+                   // var res = parseJSON(info);
+                   // var sourceLink = domain + res.key; 获取上传成功后的文件的Url
+            },
+            'Error': function(up, err, errTip) {
+                   //上传出错时,处理相关的事情
+            },
+            'UploadComplete': function() {
+                   //队列文件处理完毕后,处理相关的事情
+            },
+            'Key': function(up, file) {
+                // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+                // 该配置必须要在 unique_names: false , save_key: false 时才生效
+                return generatorKey();
+                // do something with key here
+            }
+        }
+    });
+
+    // 生成七牛key
+    function generatorKey(){
+        var nub=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9']
+        var key;
+        var randomLength = 8;
+        var oDate=new Date();
+        key=tenword(oDate.getFullYear())+tenword(oDate.getMonth()+1)+tenword(oDate.getDate())+tenword(oDate.getHours())+tenword(oDate.getMinutes())+tenword(oDate.getSeconds());
+        for(var i = 0; i < randomLength; i ++)
+        {
+            key += nub[Math.floor(Math.random()*62)];
+        }
+        return key + '.jpg';
+    }
+    function tenword(n)
+    {
+        if(n<10)
+        {
+            return "0"+n;
+        }
+        else if(n>=10)
+        {
+            return n+"";
+        }
+    }
+    // domain 为七牛空间（bucket)对应的域名，选择某个空间后，可通过"空间设置->基本设置->域名设置"查看获取
+    // uploader 为一个plupload对象，继承了所有plupload的方法，参考http://plupload.com/docs
+</script>
+
+<!--一下是ueditor相关内容-->
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+
+    function isFocus(e){
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e){
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData () {
+        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+    }
+
+    function clearLocalData () {
+        UE.getEditor('editor').execCommand( "clearlocaldata" );
+        alert("已清空草稿箱")
+    }
+
+    $(document).ready(function (){
+
+        $("#post").click(function(){
+            // concole data
+            console.log(cover_key);
+            var title = $('#inputTitle').val();
+            console.log('title is ' + title);
+            var subContent = $('#inputSubContent').val();
+            console.log('subcontent is ' + subContent);
+            var category = $('#category').val();
+            console.log('category is ' + category);
+            var contentType = $('#contentType').val();
+            console.log('content type is ' + contentType);
+            var content = UE.getEditor('editor').getPlainTxt();
+            console.log('content is ' + content);
+{#            $.post("/web/postContent/",#}
+{#            {#}
+{#                name : "name is name",#}
+{#                category : "text",#}
+{#                content : UE.getEditor('editor').getAllHtml()#}
+{#            },#}
+{#            function(data, status){#}
+{#                if (status == 'SUCCESS'){#}
+{#                    alert(data);#}
+{#                }#}
+{#            });#}
+        });
+    });
+</script>
+
+</body>
+</html>

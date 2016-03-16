@@ -118,11 +118,14 @@ BUCKEY_DOMAIN = 'http://7xo9gq.com2.z0.glb.qiniucdn.com'
 from qiniu import Auth
 q = Auth(AK, SK)
 
-def getQiniuToken(key):
+def getQiniuTokenWithoutKey():
+    return q.upload_token(bucket_name)
+
+def getQiniuToken(qiniuKey):
     """
     获取七牛上传的token
     :param bucket: 空间名
     :param key: 上传后的名字
     :return:
     """
-    return q.upload_token(bucket_name, key)
+    return q.upload_token(bucket_name, key=qiniuKey)

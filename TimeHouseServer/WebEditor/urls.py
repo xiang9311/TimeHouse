@@ -10,4 +10,19 @@ urlpatterns = [
 
     # 发布内容
     url(r'^postContent/$', views.postContent, name='postContent'),
+
+    # 登录
+    url(r'^login/$', views.login, name='login'),
+
+    # 注册
+    url(r'^register/$', views.register, name='register'),
+
+    # 用户详情
+    url(r'^userDetail/$', views.userDetail, name='userDetail'),
+
+    # 编辑页面
+    url(r'^editorPage/$', views.editorPage, name='editorPage'),
+
+    # 获取七牛token
+    url(r'^getToken/$', views.getToken, name='getToken'),
 ]

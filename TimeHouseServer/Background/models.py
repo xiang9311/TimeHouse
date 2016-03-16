@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     """
-    用户, 或组织
+    用户 普通用户
     """
     name = models.CharField(max_length=100)
     avatar = models.CharField(max_length=100)
@@ -12,11 +12,29 @@ class User(models.Model):
     wb_no = models.CharField(max_length=100)
     create_time = models.DateTimeField()
 
+class Organization(models.Model):
+    """
+    组织
+    """
+    name = models.CharField(max_length=100)
+    avatar = models.CharField(max_length=100)
+    pw_md5 = models.CharField(max_length=70)
+    wx_no = models.CharField(max_length=100)
+    wb_no = models.CharField(max_length=100)
+    is_trusteeship = models.BooleanField()  # 是否是托管的组织（前期的组织一般都是托管，管理员们可以用来发内容）
+    create_time = models.DateTimeField()
+
+class OrganizationAdmin(models.Model):
+    name = models.CharField(max_length=100)
+    avatar = models.CharField(max_length=100)
+    pw_md5 = models.CharField(max_length=70)
+    create_time = models.DateTimeField()
+
 class ArticleNews(models.Model):
     """
     时事
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -33,7 +51,7 @@ class ArticleHistory(models.Model):
     """
     历史
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -50,7 +68,7 @@ class ArticleLiterature(models.Model):
     """
     文化
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -67,7 +85,7 @@ class ArticlePhilosophy(models.Model):
     """
     哲学
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -84,7 +102,7 @@ class ArticleForeign(models.Model):
     """
     外文
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -101,7 +119,7 @@ class ArticleHuman(models.Model):
     """
     人物
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -118,7 +136,7 @@ class ArticleCulture(models.Model):
     """
     人物
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -135,7 +153,7 @@ class ArticlePhoto(models.Model):
     """
     摄影
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -152,7 +170,7 @@ class ArticleJoke(models.Model):
     """
     笑话
     """
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -167,7 +185,7 @@ class ArticleJoke(models.Model):
 
 class TextAndImage(models.Model):
     articleId = models.IntegerField()
-    user_id = models.ForeignKey(User)
+    organization = models.ForeignKey(Organization)
     text = models.CharField(max_length=300)
     image = models.CharField(max_length=300)
 
