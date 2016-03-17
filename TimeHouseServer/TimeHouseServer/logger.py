@@ -8,6 +8,7 @@ def info(content):
     logger.info(content)
 
 def debug(content):
+    print(content)
     logger.debug(content)
 
 def warn(content):

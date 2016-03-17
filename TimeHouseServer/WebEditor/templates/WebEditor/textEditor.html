@@ -50,21 +50,23 @@
         <div class="form-group">
             <label for="category">分类：</label>
             <select id="category" class="form-control">
-                <option value="time">时事</option>
-                <option value="history">历史</option>
-                <option value="culture">文化</option>
-                <option value="tec">科技</option>
-                <option value="haha">哈哈</option>
-                <option value="english">英文</option>
-                <option value="read">阅读</option>
+                <option value="1">时事</option>
+                <option value="2">历史</option>
+                <option value="3">文学</option>
+                <option value="4">哲学</option>
+                <option value="5">外语</option>
+                <option value="6">人物</option>
+                <option value="7">文化</option>
+                <option value="8">摄影</option>
+                <option value="9">笑话</option>
             </select>
         </div>
         <div class="form-group">
             <label for="contentType">内容显示类型：</label>
             <select id="contentType" class="form-control">
-                <option value="normal">普通类型</option>
-                <option value="shorttext">短文类型</option>
-                <option value="images">图文类型</option>
+                <option value="1">普通类型</option>
+                <option value="2">短文类型</option>
+                <option value="3">图文类型</option>
             </select>
         </div>
         <div class="form-group">
@@ -73,7 +75,7 @@
     </div>
 
 
-    <div id="btns">
+    <div id="btns" style="visibility: hidden">
         <div>
             <button id="postContent">发布</button>
             <button onclick="getAllHtml()">获得整个html的内容</button>
@@ -161,8 +163,8 @@
                    //  }
                 var domain = up.getOption('domain');
                 var res = jQuery.parseJSON(info);
-                var sourceLink = domain + res.key + '?imageView2/1/w/700/h/400/q/90'; //获取上传成功后的文件的Url
-                cover_key = info.key;
+                var sourceLink = domain + res.key + '?imageView2/1/w/490/h/280/q/90'; //获取上传成功后的文件的Url
+                cover_key = res.key;
                 document.getElementById('preview').src = sourceLink;
                 console.log(sourceLink);
                    // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
@@ -184,8 +186,6 @@
             }
         }
     });
-
-
     // domain 为七牛空间（bucket)对应的域名，选择某个空间后，可通过"空间设置->基本设置->域名设置"查看获取
     // uploader 为一个plupload对象，继承了所有plupload的方法，参考http://plupload.com/docs
 </script>
@@ -318,17 +318,20 @@
             console.log('content type is ' + contentType);
             var content = UE.getEditor('editor').getPlainTxt();
             console.log('content is ' + content);
-{#            $.post("/web/postContent/",#}
-{#            {#}
-{#                name : "name is name",#}
-{#                category : "text",#}
-{#                content : UE.getEditor('editor').getAllHtml()#}
-{#            },#}
-{#            function(data, status){#}
-{#                if (status == 'SUCCESS'){#}
-{#                    alert(data);#}
-{#                }#}
-{#            });#}
+            $.post("/web/postTextContent/",
+            {
+                cover : cover_key,
+                title : title,
+                subContent : subContent,
+                category : category,
+                contentType: contentType,
+                content : UE.getEditor('editor').getPlainTxt()
+            },
+            function(data, status){
+                if (status == 'SUCCESS'){
+                    alert(data);
+                }
+            });
         });
     });
 </script>

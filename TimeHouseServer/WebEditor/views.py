@@ -13,8 +13,16 @@ from importlib import import_module
 from qiniu import Auth, put_file
 from TimeHouseServer import logger, settings
 from .constant import constant
+
+# service is here
+from .service import organizationService, articleService
+
 # Create your views here.
 
+KEY_USER_ID = 'userid'
+
+SUCCESS = 'SUCCESS'
+ERROR = 'ERROR'
 # KEYS = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m',
 #         'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M',
 #         '1','2','3','4','5','6','7','8','9','0']
@@ -60,7 +68,11 @@ def userDetail(request):
     :param request:
     :return:
     """
-    return render(request, 'WebEditor/userDetail.html')
+    if not request.session.get(KEY_USER_ID, ''):
+        return render(request, 'WebEditor/login.html')
+    else:
+        return render(request, 'WebEditor/userDetail.html')
+
 
 @csrf_exempt
 def register(request):
@@ -71,7 +83,23 @@ def register(request):
     """
     if request.method == 'POST':
         # 注册成功后跳转
-        return HttpResponseRedirect('/web/userDetail/')
+        # 获取注册内容
+        logger.debug(str(request.POST))
+        avatar_url = request.POST.get('avatar', '')
+        invite_code = request.POST.get('code', '')
+        user_name = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        espassword = request.POST.get('espassword', '')
+        wx_number = request.POST.get('wxNumber', '')
+        wb_name = request.POST.get('wbName', '')
+
+        if organizationService.addOrganization(avatar_url, user_name, password, wx_number, wb_name):
+            return HttpResponseRedirect('/web/login/')
+        else:
+            # 名字已被使用
+            return HttpResponse('名字已被使用')
+
+
     else:
         return render(request, 'WebEditor/register.html')
 
@@ -82,9 +110,45 @@ def login(request):
     :return:
     """
     if request.method == 'POST':
-        return HttpResponseRedirect('/web/userDetail/')
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+
+        suc, userid = organizationService.checkOrganizationPassword(username, password)
+        if suc:
+            request.session[KEY_USER_ID] = userid
+            return HttpResponseRedirect('/web/userDetail/')
+        else:
+            return render(request, 'WebEditor/login.html', {'passworderror':True})
+
+
     else:
         return render(request, 'WebEditor/login.html')
+
+@csrf_exempt
+def postTextContent(request):
+    userId = request.session.get(KEY_USER_ID, '')
+    if not userId:
+        return HttpResponse('你还未登录或登录已过期')
+
+    print(str(request.POST))
+
+    articleType = 2  # 普通文章
+
+    cover = request.POST.get('cover', '')
+    title = request.POST.get('title')
+    subContent = request.POST.get('subContent')
+    category = request.POST.get('category')
+    contentType = request.POST.get('contentType')
+    content = request.POST.get('content')
+    print('cover is ', cover)
+    if not (content and title and cover):
+        return HttpResponse('还未填写内容或title或未选择cover图')
+
+    if articleService.addTextArticle(userId, cover, title, subContent, category, contentType, articleType, content):
+        return HttpResponse(SUCCESS)
+    else:
+        return HttpResponse(ERROR)
+
 
 
 @csrf_exempt
@@ -94,12 +158,25 @@ def postContent(request):
     :param request:
     :return:
     """
-    logger.info('get request')
+    userId = request.session.get(KEY_USER_ID, '')
+    if not userId:
+        return HttpResponse('你还未登录或登录已过期')
 
-    category = request.POST.get('category', 'no')
-    content = request.POST.get('content', 'no content')
-    title = '这个是标题'
-    user_name = 'yuxiangxiang'
+    user_name = organizationService.getOrganizationNameById(userId)
+
+    if not user_name:
+        return HttpResponse('未找到对应组织名')
+
+    print(str(request.POST))
+
+    articleType = 1  # web
+
+    cover = request.POST.get('cover', '')
+    title = request.POST.get('title')
+    subContent = request.POST.get('subContent')
+    category = request.POST.get('category')
+    contentType = request.POST.get('contentType')
+    content = request.POST.get('content')
 
     # 插入 <meta charset="UTF-8">
     # replace 方法不会改变原字符串，会返回替换后的内容。学java的表示呵呵呵
@@ -109,18 +186,19 @@ def postContent(request):
     file_name = constant.getHtmlFileName(category)
     path = settings.STATIC_ROOT + '/' + user_name
     file = path + '/' + file_name
-
     if not os.path.exists(path):
         os.mkdir(path)
-
     html = open(file, 'w', encoding='utf-8')
-
     html.write(content)
     html.close()
 
-    logger.info('saved success')
+    contentUrl = "http://101.200.84.75:8999/static/" + user_name + '/' + file_name
 
-    return HttpResponse("SUCCESS saved in " + "http://101.200.84.75:8999/static/" + user_name + '/' + file_name)
+    if articleService.addWebArticle(userId, cover, title, subContent, category, contentType, articleType, content, contentUrl):
+        return HttpResponse(SUCCESS)
+    else:
+        return HttpResponse('失败啦，请重试或者联系工程师')
+
 
 
 def editor(request):

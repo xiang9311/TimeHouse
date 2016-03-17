@@ -10,6 +10,7 @@ urlpatterns = [
 
     # 发布内容
     url(r'^postContent/$', views.postContent, name='postContent'),
+    url(r'^postTextContent/$', views.postTextContent, name='postTextContent'),
 
     # 登录
     url(r'^login/$', views.login, name='login'),

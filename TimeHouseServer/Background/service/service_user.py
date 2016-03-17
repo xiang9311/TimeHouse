@@ -26,3 +26,4 @@ def getOrganizeByUserId(userId, organize):
     organize.avatar = user.avatar
 
     return organize
+
