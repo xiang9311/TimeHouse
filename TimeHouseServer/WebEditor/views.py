@@ -184,8 +184,8 @@ def postContent(request):
                               '</title><meta charset="UTF-8">' +
                               '<script type="text/javascript" src="http://101.200.84.75:8999/static/WebEditor/Adaptive.js"></script>'
                               , 1)
-    content = content.replace('<body>', '<body><div class="box">', 1)
-    body_last_index = content.rfind('<body>')
+    content = content.replace('<body >', '<body><div class="box">', 1)  # 使用<body >因为h5就只这么生成的啊啊啊
+    body_last_index = content.rfind('</body>')
     content = content[:body_last_index] + '</div>' + content[body_last_index:]
 
     #创建文件 settings.STATIC_ROOT + filename
