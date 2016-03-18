@@ -154,7 +154,7 @@ def postTextContent(request):
 @csrf_exempt
 def postContent(request):
     """
-    提交最后的编辑内容
+    提交最后的编辑内容  web内容
     :param request:
     :return:
     """
@@ -180,7 +180,13 @@ def postContent(request):
 
     # 插入 <meta charset="UTF-8">
     # replace 方法不会改变原字符串，会返回替换后的内容。学java的表示呵呵呵
-    content = content.replace('<head>', '<head><title>'+title+'</title><meta charset="UTF-8">', 1)
+    content = content.replace('<head>', '<head><title>'+title+
+                              '</title><meta charset="UTF-8">' +
+                              '<script type="text/javascript" src="http://101.200.84.75:8999/static/WebEditor/Adaptive.js"></script>'
+                              , 1)
+    content = content.replace('<body>', '<body><div class="box">', 1)
+    body_last_index = content.rfind('<body>')
+    content = content[:body_last_index] + '</div>' + content[body_last_index:]
 
     #创建文件 settings.STATIC_ROOT + filename
     file_name = constant.getHtmlFileName(category)
@@ -195,9 +201,9 @@ def postContent(request):
     contentUrl = "http://101.200.84.75:8999/static/" + user_name + '/' + file_name
 
     if articleService.addWebArticle(userId, cover, title, subContent, category, contentType, articleType, content, contentUrl):
-        return HttpResponse(SUCCESS)
+        return HttpResponse(json.dumps({'status':SUCCESS, 'contentUrl':contentUrl}, ensure_ascii=False))
     else:
-        return HttpResponse('失败啦，请重试或者联系工程师')
+        return HttpResponse(json.dumps({'status':ERROR, 'message' :'失败啦，请重试或者联系工程师'}, ensure_ascii=False))
 
 
 

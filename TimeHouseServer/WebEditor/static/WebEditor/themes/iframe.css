@@ -1,1 +1,6 @@
 /*可以在这里添加你自己的css*/
+div.box {
+    width:3.8rem;
+    margin: 0 auto;
+    background-color: #DDDDDD;
+}
