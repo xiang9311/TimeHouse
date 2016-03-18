@@ -34,11 +34,9 @@
       <file leaf-file-name="webEditor.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45602605" vertical-offset="6339" max-vertical-offset="6726">
-              <caret line="341" column="57" selection-start-line="341" selection-start-column="57" selection-end-line="341" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.39413682" vertical-offset="6339" max-vertical-offset="6688">
+              <caret line="340" column="99" selection-start-line="340" selection-start-column="99" selection-end-line="340" selection-end-column="99" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,31 +44,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6081" max-vertical-offset="10032">
-              <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6537" max-vertical-offset="10032">
+              <caret line="347" column="14" selection-start-line="347" selection-start-column="14" selection-end-line="347" selection-end-column="14" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iframe.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebEditor/static/WebEditor/themes/iframe.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
-              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="postSuccess.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/postSuccess.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.428571" vertical-offset="0" max-vertical-offset="304">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -169,9 +147,9 @@
         <option value="$PROJECT_DIR$/Background/service/service_user.py" />
         <option value="$PROJECT_DIR$/WebEditor/service/organizationService.py" />
         <option value="$PROJECT_DIR$/WebEditor/service/articleService.py" />
-        <option value="$PROJECT_DIR$/WebEditor/static/WebEditor/themes/iframe.css" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/postSuccess.html" />
         <option value="$PROJECT_DIR$/WebEditor/views.py" />
+        <option value="$PROJECT_DIR$/WebEditor/static/WebEditor/themes/iframe.css" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html" />
       </list>
     </option>
@@ -1124,22 +1102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/static/WebEditor/themes/iframe.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/postSuccess.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.428571" vertical-offset="0" max-vertical-offset="304">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.18181819" vertical-offset="29448" max-vertical-offset="39444">
@@ -1148,10 +1110,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/static/WebEditor/themes/iframe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14004914" vertical-offset="0" max-vertical-offset="407">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/postSuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.050131924" vertical-offset="0" max-vertical-offset="379">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6081" max-vertical-offset="10032">
-          <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6537" max-vertical-offset="10032">
+          <caret line="347" column="14" selection-start-line="347" selection-start-column="14" selection-end-line="347" selection-end-column="14" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -1160,11 +1138,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45602605" vertical-offset="6339" max-vertical-offset="6726">
-          <caret line="341" column="57" selection-start-line="341" selection-start-column="57" selection-end-line="341" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.39413682" vertical-offset="6339" max-vertical-offset="6688">
+          <caret line="340" column="99" selection-start-line="340" selection-start-column="99" selection-end-line="340" selection-end-column="99" />
+          <folding />
         </state>
       </provider>
     </entry>

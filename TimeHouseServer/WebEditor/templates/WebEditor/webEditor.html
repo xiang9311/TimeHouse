@@ -69,7 +69,7 @@
         </div>
         <div class="form-group">
             <button id="post" class="btn btn-primary">发布</button>
-            <a id="webPreview" href="" class="btn btn-primary" style="display: none">去看看吧</a>
+            <div id="contenturl"></div>
         </div>
     </div>
 </div>
@@ -337,10 +337,8 @@
             content : UE.getEditor('editor').getAllHtml()
         },
         function(data, status){
-            var webPreview = document.getElementById('webPreview');
             if (status == 'success'){
-                webPreview.css('display','inline-block');
-                webPreview.src=data.contentUrl;
+                $('#contenturl').innerHTML = '<a href="'+data.contentUrl+'" class="btn btn-primary">去看看吧</a>'
             }
         });
     });
