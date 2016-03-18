@@ -69,7 +69,7 @@
         </div>
         <div class="form-group">
             <button id="post" class="btn btn-primary">发布</button>
-            <a id="webPreview" href="" class="btn btn-primary" style="visibility: hidden">去看看吧</a>
+            <a id="webPreview" href="" class="btn btn-primary" style="display: none">去看看吧</a>
         </div>
     </div>
 </div>
@@ -313,37 +313,35 @@
 {#            });#}
 {#        });#}
 {#    });#}
-    $(document).ready(function (){
 
-        $("#post").click(function(){
-            // concole data
-            console.log(cover_key);
-            var title = $('#inputTitle').val();
-            console.log('title is ' + title);
-            var subContent = $('#inputSubContent').val();
-            console.log('subcontent is ' + subContent);
-            var category = $('#category').val();
-            console.log('category is ' + category);
-            var contentType = $('#contentType').val();
-            console.log('content type is ' + contentType);
-            var content = UE.getEditor('editor').getAllHtml();
-            console.log('content is ' + content);
-            $.post("/web/postContent/",
-            {
-                cover : cover_key,
-                title : title,
-                subContent : subContent,
-                category : category,
-                contentType: contentType,
-                content : UE.getEditor('editor').getAllHtml()
-            },
-            function(data, status){
-                var webPreview = document.getElementById('webPreview');
-                if (status == 'success'){
-                    webPreview.css('visibility','visible');
-                    webPreview.src=data.contentUrl;
-                }
-            });
+    $("#post").click(function(){
+        // concole data
+        console.log(cover_key);
+        var title = $('#inputTitle').val();
+        console.log('title is ' + title);
+        var subContent = $('#inputSubContent').val();
+        console.log('subcontent is ' + subContent);
+        var category = $('#category').val();
+        console.log('category is ' + category);
+        var contentType = $('#contentType').val();
+        console.log('content type is ' + contentType);
+        var content = UE.getEditor('editor').getAllHtml();
+        console.log('content is ' + content);
+        $.post("/web/postContent/",
+        {
+            cover : cover_key,
+            title : title,
+            subContent : subContent,
+            category : category,
+            contentType: contentType,
+            content : UE.getEditor('editor').getAllHtml()
+        },
+        function(data, status){
+            var webPreview = document.getElementById('webPreview');
+            if (status == 'success'){
+                webPreview.css('display','inline-block');
+                webPreview.src=data.contentUrl;
+            }
         });
     });
 </script>
