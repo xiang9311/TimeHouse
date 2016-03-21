@@ -21,7 +21,7 @@ from . import service_user
 #   JOKE = 9;          // 笑话
 # }
 
-Articles = [None
+Articles = [ArticleNews    # 默认使用news
             , ArticleNews
             , ArticleHistory
             , ArticleLiterature
@@ -124,6 +124,6 @@ def getArticleFromTblArticle(tblArticle, article):
     else:
         pass
 
-    service_user.getOrganizeByUserId(tblArticle.user_id, article.organize)
+    service_user.getOrganizeById(tblArticle.organization_id, article.organize)
 
     return article

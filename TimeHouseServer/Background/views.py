@@ -49,7 +49,7 @@ def getArticles(request):
     except:
         pass
 
-    common = request10001.common
+    request_common = request10001.common
     params = request10001.params
 
     articles = None
@@ -58,13 +58,13 @@ def getArticles(request):
 
         response10001 = reader_pb2.Response10001()
 
-        common = response10001.common
+        response_common = response10001.common
         data = response10001.data
 
-        initCommonResponse(0, 'success', 10001, common.userid, common)
+        initCommonResponse(0, 'success', 10001, request_common.userid, response_common)
 
         articles = data.articles
-        service_article.getArticles(common.userid, params.category, params.index, articles)
+        service_article.getArticles(request_common.userid, params.category, params.index, articles)
 
         data.maxCount = constant.LIMIT
 

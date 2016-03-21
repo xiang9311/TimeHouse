@@ -1,6 +1,6 @@
 __author__ = '祥祥'
 
-from Background.models import User
+from Background.models import User, Organization
 from Background.protocol import common_pb2
 
 def verifyUserKey(request):
@@ -13,17 +13,17 @@ def verifyUserKey(request):
 
 
 
-def getOrganizeByUserId(userId, organize):
+def getOrganizeById(userId, organize):
     """
     通过用户的id获取proto中的组织对象
     :param userId:
     :return:
     """
-    user = User.objects.get(id=userId)
+    u_organize = Organization.objects.get(id=userId)
 
-    organize.id = user.id
-    organize.name = user.name
-    organize.avatar = user.avatar
+    organize.id = u_organize.id
+    organize.name = u_organize.name
+    organize.avatar = u_organize.avatar
 
     return organize
 
