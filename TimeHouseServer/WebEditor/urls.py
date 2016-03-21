@@ -11,6 +11,7 @@ urlpatterns = [
     # 发布内容
     url(r'^postContent/$', views.postContent, name='postContent'),
     url(r'^postTextContent/$', views.postTextContent, name='postTextContent'),
+    url(r'^postImageContent/$', views.postImageContent, name='postImageContent'),
 
     # 登录
     url(r'^login/$', views.login, name='login'),

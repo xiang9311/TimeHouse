@@ -32,6 +32,17 @@ Articles = [None
             , ArticlePhoto
             , ArticleJoke]
 
+Categorys = ['error'
+             , '时事'
+             , '历史'
+             , '文学'
+             , '哲学'
+             , '外语'
+             , '人物'
+             , '文化'
+             , '摄影'
+             , '笑话']
+
 def getArticles(userId, category, index, articles):
     """
     获取文章列表

@@ -71,7 +71,9 @@ def userDetail(request):
     if not request.session.get(KEY_USER_ID, ''):
         return render(request, 'WebEditor/login.html')
     else:
-        return render(request, 'WebEditor/userDetail.html')
+        organizationId = request.session.get(KEY_USER_ID)
+        articles = articleService.getArticlesByOrgId(organizationId)
+        return render(request, 'WebEditor/userDetail.html', articles)
 
 
 @csrf_exempt
@@ -98,8 +100,6 @@ def register(request):
         else:
             # 名字已被使用
             return HttpResponse('名字已被使用')
-
-
     else:
         return render(request, 'WebEditor/register.html')
 
@@ -125,6 +125,33 @@ def login(request):
         return render(request, 'WebEditor/login.html')
 
 @csrf_exempt
+def postImageContent(request):
+    userId = request.session.get(KEY_USER_ID, '')
+    if not userId:
+        return HttpResponse('你还未登录或登录已过期')
+
+    print(str(request.POST))
+
+    images = request.POST.getlist('images[]')
+    texts = request.POST.getlist('texts[]')
+    title = request.POST.get('title')
+    category = request.POST.get('category')
+    author = request.POST.get('author')
+
+    print("分类：", category)
+
+    articleType = 3  # 图文
+    contentType = 3 # 图文
+
+
+    if articleService.addImageArticle(userId, title, category, contentType, articleType, images, texts, author):
+        return HttpResponse(SUCCESS)
+    else:
+        response = HttpResponse(ERROR)
+        response.status_code = 500
+        return response
+
+@csrf_exempt
 def postTextContent(request):
     userId = request.session.get(KEY_USER_ID, '')
     if not userId:
@@ -140,11 +167,12 @@ def postTextContent(request):
     category = request.POST.get('category')
     contentType = request.POST.get('contentType')
     content = request.POST.get('content')
+    author = request.POST.get('author')
     print('cover is ', cover)
     if not (content and title and cover):
         return HttpResponse('还未填写内容或title或未选择cover图')
 
-    if articleService.addTextArticle(userId, cover, title, subContent, category, contentType, articleType, content):
+    if articleService.addTextArticle(userId, cover, title, subContent, category, contentType, articleType, content, author):
         return HttpResponse(SUCCESS)
     else:
         return HttpResponse(ERROR)
@@ -177,6 +205,7 @@ def postContent(request):
     category = request.POST.get('category')
     contentType = request.POST.get('contentType')
     content = request.POST.get('content')
+    author = request.POST.get('author')
 
     # 插入 <meta charset="UTF-8">
     # replace 方法不会改变原字符串，会返回替换后的内容。学java的表示呵呵呵
@@ -200,7 +229,7 @@ def postContent(request):
 
     contentUrl = "http://101.200.84.75:8999/static/" + user_name + '/' + file_name
 
-    if articleService.addWebArticle(userId, cover, title, subContent, category, contentType, articleType, content, contentUrl):
+    if articleService.addWebArticle(userId, cover, title, subContent, category, contentType, articleType, content, contentUrl, author):
         return HttpResponse(json.dumps({'status':SUCCESS, 'contentUrl':contentUrl}, ensure_ascii=False))
     else:
         return HttpResponse(json.dumps({'status':ERROR, 'message' :'失败啦，请重试或者联系工程师'}, ensure_ascii=False))

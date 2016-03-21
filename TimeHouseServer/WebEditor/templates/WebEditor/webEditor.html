@@ -42,6 +42,10 @@
             <input id="inputTitle" type="text" class="form-control" placeholder="title">
         </div>
         <div class="form-group">
+            <label for="inputAuthor">作者：</label>
+            <input id="inputAuthor" type="text" class="form-control" placeholder="author">
+        </div>
+        <div class="form-group">
             <label for="inputSubContent">摘要：</label>
             <textarea id="inputSubContent" type="text" rows="3" class="form-control" placeholder="subContent"></textarea>
         </div>
@@ -69,11 +73,10 @@
         </div>
         <div class="form-group">
             <button id="post" class="btn btn-primary">发布</button>
-            <div id="contenturl"></div>
         </div>
     </div>
 </div>
-<div id="btns">
+<div id="btns" style="display: none;">
     <div>
         <button id="postContent">发布</button>
         <button onclick="getAllHtml()">获得整个html的内容</button>
@@ -314,7 +317,9 @@
 {#        });#}
 {#    });#}
 
+
     $("#post").click(function(){
+
         // concole data
         console.log(cover_key);
         var title = $('#inputTitle').val();
@@ -327,6 +332,7 @@
         console.log('content type is ' + contentType);
         var content = UE.getEditor('editor').getAllHtml();
         console.log('content is ' + content);
+        var author = $('#inputAuthor').val();
         $.post("/web/postContent/",
         {
             cover : cover_key,
@@ -334,11 +340,13 @@
             subContent : subContent,
             category : category,
             contentType: contentType,
+            author : author,
             content : UE.getEditor('editor').getAllHtml()
         },
         function(data, status){
-            if (status == 'success'){
-                $('#contenturl').innerHTML = '<a href="'+data.contentUrl+'" class="btn btn-primary">去看看吧</a>'
+            if (status == 'success') {
+                alert('发布成功');
+                window.location.href = '/web/userDetail/';
             }
         });
     });

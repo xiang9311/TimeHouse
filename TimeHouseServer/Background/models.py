@@ -35,6 +35,7 @@ class ArticleNews(models.Model):
     时事
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -52,6 +53,7 @@ class ArticleHistory(models.Model):
     历史
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -69,6 +71,7 @@ class ArticleLiterature(models.Model):
     文化
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -86,6 +89,7 @@ class ArticlePhilosophy(models.Model):
     哲学
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -103,6 +107,7 @@ class ArticleForeign(models.Model):
     外文
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -120,6 +125,7 @@ class ArticleHuman(models.Model):
     人物
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -134,9 +140,10 @@ class ArticleHuman(models.Model):
 
 class ArticleCulture(models.Model):
     """
-    人物
+    文化
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -154,6 +161,7 @@ class ArticlePhoto(models.Model):
     摄影
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)
@@ -171,6 +179,7 @@ class ArticleJoke(models.Model):
     笑话
     """
     organization = models.ForeignKey(Organization)
+    author_name = models.CharField(max_length=100)
     content_type = models.IntegerField()
     article_type = models.IntegerField()
     title = models.CharField(max_length=100)

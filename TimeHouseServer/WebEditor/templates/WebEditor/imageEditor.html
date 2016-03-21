@@ -1,10 +1,231 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    {% load staticfiles %}
     <meta charset="UTF-8">
     <title>图片编辑</title>
+    <script type="text/javascript" charset="utf-8" src="{% static 'WebEditor/jquery-1.7.1.min.js' %}"></script>
+    <style type="text/css">
+        div.addPanel{
+            width:300px;
+            height: 300px;
+            margin-left: 15px;
+            float: left;
+            margin-top: 15px;
+        }
+
+        div.panel{
+            width: 300px;
+            height: 250px;
+            margin-left: 20px;
+            margin-top: 15px;
+            float: left;
+        }
+
+        img.showImg{
+            width: 300px;
+            height: 250px;
+            position: relative;
+        }
+        p.p-des{
+            width: 300px;
+        }
+        div.showText{
+            position: relative;
+            background-color: rgba(0,0,0,0.1);
+        }
+        div.postPanel{
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="{% static 'WebEditor/css/bootstrap.min.css' %}">
+
 </head>
 <body>
-图片编辑
+<div class="container" style="margin-top: 10px">
+    <div class="postPanel">
+        <div class="form-group">
+            <label for="input-title">标题：</label>
+            <input id="inputTitle" type="text" class="form-control" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label for="inputAuthor">作者：</label>
+            <input id="inputAuthor" type="text" class="form-control" placeholder="author">
+        </div>
+        <div class="form-group">
+            <label for="category">分类：</label>
+            <select id="category" class="form-control">
+                <option value="1">时事</option>
+                <option value="2">历史</option>
+                <option value="3">文学</option>
+                <option value="4">哲学</option>
+                <option value="5">外语</option>
+                <option value="6">人物</option>
+                <option value="7">文化</option>
+                <option value="8">摄影</option>
+                <option value="9">笑话</option>
+            </select>
+        </div>
+        <button id="post" class="btn btn-primary">发布</button>
+        <span id="count">0/20</span>
+    </div>
+
+    <div id="addPanel" class="addPanel">
+        <button id="choose" class="btn btn-primary">选择图片</button><label id="progress" style="margin-left: 8px">准备上传</label>
+        <img id="preview" class="showImg" src="{% static 'WebEditor/img/add.png' %}" style="margin-top: 5px; margin-bottom: 5px;">
+        <label for="imageDes">描述：</label>
+        <textarea id="imageDes" class="form-control"></textarea>
+        <button id="addImages" class="btn btn-primary" type="button" style="margin-top: 8px; width: 300px;">添加</button>
+    </div>
+</div>
 </body>
+<script type="text/javascript" src="{% static 'WebEditor/plupload.full.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'WebEditor/qiniu.js' %}"></script>
+<script type="text/javascript" src="{% static 'WebEditor/generator-key.js' %}"></script>
+
+<!--以下是qiniu上传相关代码-->
+<script type="text/javascript">
+
+    var max = 20;
+    var imageArray = new Array(max);
+    var textArray = new Array(max);
+    var current = 0;
+    var uploader = Qiniu.uploader({
+       runtimes: 'html5,flash,html4',    //上传模式,依次退化
+       browse_button: 'choose',       //上传选择的点选按钮，**必需**
+       uptoken_url: '/web/getToken/',
+            //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+        // uptoken : '<Your upload token>',
+            //若未指定uptoken_url,则必须指定 uptoken ,uptoken由其他程序生成
+        // unique_names: true,
+            // 默认 false，key为文件名。若开启该选项，SDK会为每个文件自动生成key（文件名）
+        //save_key: true,
+            // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK在前端将不对key进行任何处理
+        domain: 'http://7xo9gq.com2.z0.glb.qiniucdn.com/',
+            //bucket 域名，下载资源时用到，**必需**
+        container: 'addPanel',           //上传区域DOM ID，默认是browser_button的父元素，
+        max_file_size: '100mb',           //最大文件体积限制
+        flash_swf_url: '{% static "WebEditor/Moxie.swf" %}',  //引入flash,相对路径
+        max_retries: 3,                   //上传失败最大重试次数
+        dragdrop: true,                   //开启可拖曳上传
+        drop_element: 'preview',        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+        chunk_size: '4mb',                //分块上传时，每片的体积
+        auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
+        init: {
+            'FilesAdded': function(up, files) {
+                plupload.each(files, function(file) {
+                    // 文件添加进队列后,处理相关的事情
+                });
+            },
+            'BeforeUpload': function(up, file) {
+                   // 每个文件上传前,处理相关的事情
+                $('#progress').text("开始上传");
+            },
+            'UploadProgress': function(up, file) {
+                   // 每个文件上传时,处理相关的事情
+                $('#progress').text("上传进度：" + file.percent + "%");
+            },
+            'FileUploaded': function(up, file, info) {
+                   // 每个文件上传成功后,处理相关的事情
+                   // 其中 info 是文件上传成功后，服务端返回的json，形式如
+                   // {
+                   //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+                   //    "key": "gogopher.jpg"
+                   //  }
+                var domain = up.getOption('domain');
+                var res = jQuery.parseJSON(info);
+                var sourceLink = domain + res.key + '?imageView2/1/w/490/h/280/q/90'; //获取上传成功后的文件的Url
+                document.getElementById('preview').src = sourceLink;
+                imageArray[current] = sourceLink;
+                $('#progress').text("已完成");
+                   // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
+                   // var domain = up.getOption('domain');
+                   // var res = parseJSON(info);
+                   // var sourceLink = domain + res.key; 获取上传成功后的文件的Url
+            },
+            'Error': function(up, err, errTip) {
+                   //上传出错时,处理相关的事情
+            },
+            'UploadComplete': function() {
+                   //队列文件处理完毕后,处理相关的事情
+            },
+            'Key': function(up, file) {
+                // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+                // 该配置必须要在 unique_names: false , save_key: false 时才生效
+                return generatorKey();
+                // do something with key here
+            }
+        }
+    });
+    // domain 为七牛空间（bucket)对应的域名，选择某个空间后，可通过"空间设置->基本设置->域名设置"查看获取
+    // uploader 为一个plupload对象，继承了所有plupload的方法，参考http://plupload.com/docs
+</script>
+
+<script>
+
+    $('#addImages').click(function(){
+        if (current >= max) {
+            alert("已到达最大数量");
+            return ;
+        }
+        var content = $('#imageDes').val();
+        if(!content || !imageArray[current]){
+            alert("图片还未上传完成或没有填写内容");
+        } else {
+            textArray[current] = content;
+            current ++;
+            $('#count').text(current+'/'+max);
+            addPanel(imageArray[current - 1], textArray[current - 1]);
+        }
+    });
+
+    function addPanel(imageUrl, contentDes){
+        var docs = "<div class='panel'><img class='showImg' src='"
+                +imageUrl
+                +"'/> <div class='showText'> <p class='p-des'>"
+                +contentDes
+                +"<p> </div></div>";
+        var htdocs = $(docs);
+        $('.addPanel').before(htdocs);
+        $('#preview').attr('src', '');
+        $('#imageDes').attr('value', '');
+    }
+
+    $("#post").click(function(){
+        var title = $('#inputTitle').val();
+        if(!title){
+            alert("标题还未填写");
+            return 0;
+        }
+
+        if (current <= 2){
+            alert("至少三张图片");
+            return 0;
+        }
+
+        console.log('title is ' + title);
+        var category = $('#category').val();
+        var author = $('#inputAuthor').val();
+        console.log('category is ' + category);
+        $.post(
+            "/web/postImageContent/",
+            {
+                images:imageArray,
+                texts:textArray,
+                title:title,
+                author :author,
+                category:category
+            },
+            function(data, status){
+                if (status == 'success'){
+                    alert('发布成功');
+                    window.location.href = '/web/userDetail/';
+                }
+            }
+        );
+    });
+</script>
+
 </html>

@@ -5,11 +5,33 @@
     <meta charset="UTF-8">
     <title>用户详情</title>
     <link rel="stylesheet" type="text/css" href="{% static 'WebEditor/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'WebEditor/css/bootstrap.min.css' %}">
 </head>
 <body>
+
+<div class="container">
+    <div>
     <a href="/web/editorPage/?type=textEditor"><img src="{% static 'WebEditor/img/text.jpg' %}"></a>
     <a href="/web/editorPage/?type=webEditor"><img src="{% static 'WebEditor/img/web.jpg' %}"></a>
     <a href="/web/editorPage/?type=imageEditor"><img src="{% static 'WebEditor/img/image.jpg' %}"></a>
+    </div>
+    {% for article in articles %}
+        <div style="float: left; background: #DDDDDD; height: 300px; width: 200px; overflow: scroll">
+            <p>{{ article.content_type }}</p>
+            <p>{{ article.article_type }}</p>
+            <p>{{ article.category }}</p>
+            <p>{{ article.title }}</p>
+            <p>{{ article.sub_content }}</p>
+            <img src="{{ article.cover_url }}" style="width: 80px; height: 57px">
+            <a href="{{ article.content_url }}" target="_blank">{{ article.content_url }}</a>
+            <p>{{ article.create_time }}</p>
+        </div>
+    {% empty %}
+        <label>你还没有已经发布的内容</label>
+    {% endfor %}
+
+</div>
+
 </body>
     <script src="{% static 'WebEditor/jquery-1.7.1.min.js' %}"></script>
 </html>
