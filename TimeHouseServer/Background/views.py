@@ -68,11 +68,10 @@ def getArticles(request):
 
         data.maxCount = constant.LIMIT
 
-        # return HttpResponse(response10001.SerializeToString())
-        return HttpResponse(str(response10001))
+        return HttpResponse(response10001.SerializeToString())
+        # return HttpResponse(str(response10001))
     except Exception as error:
         return HttpResponse("error : " + str(error.args))
-        pass
 
 @csrf_exempt
 def searchArticles(request):
