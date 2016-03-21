@@ -2,6 +2,7 @@ __author__ = '祥祥'
 
 from Background.models import User, Organization
 from Background.protocol import common_pb2
+from Background import util
 
 def verifyUserKey(request):
     """
@@ -23,7 +24,7 @@ def getOrganizeById(userId, organize):
 
     organize.id = u_organize.id
     organize.name = u_organize.name
-    organize.avatar = u_organize.avatar
+    organize.avatar = util.getImageUrl200_200(u_organize.avatar)
 
     return organize
 
