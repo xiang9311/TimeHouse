@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .service import service_article
 
@@ -12,7 +13,7 @@ import time
 
 
 # Create your views here.
-
+@csrf_exempt
 def test(request):
     article = common_pb2.Article()
     article.id = 123123
@@ -34,6 +35,7 @@ def initCommonResponse(code, message, cmdid, userid, common):
     common.timestamp = int(time.time() * 1000)
     common.userid = userid
 
+@csrf_exempt
 def getArticles(request):
     """
     获取文章列表
@@ -72,6 +74,7 @@ def getArticles(request):
         return HttpResponse("error : " + str(error.args))
         pass
 
+@csrf_exempt
 def searchArticles(request):
     """
     搜索文章列表
@@ -80,6 +83,7 @@ def searchArticles(request):
     """
     pass
 
+@csrf_exempt
 def collectArticles(request):
     """
     收藏文章
@@ -87,6 +91,7 @@ def collectArticles(request):
     """
     pass
 
+@csrf_exempt
 def getDetailArticles(request):
     """
     获取文章详情
@@ -101,6 +106,7 @@ def getDetailArticles(request):
 用户相关
 """
 
+@csrf_exempt
 def verifyUsername(request):
     """
     验证用户名是否已经存在
@@ -109,6 +115,7 @@ def verifyUsername(request):
     """
     pass
 
+@csrf_exempt
 def register(request):
     """
     注册用户
@@ -117,6 +124,7 @@ def register(request):
     """
     pass
 
+@csrf_exempt
 def login(request):
     """
     登录
@@ -125,6 +133,7 @@ def login(request):
     """
     pass
 
+@csrf_exempt
 def getMyCollection(request):
     """
     获取我的收藏
@@ -133,6 +142,7 @@ def getMyCollection(request):
     """
     pass
 
+@csrf_exempt
 def updateUserInfo(request):
     """
     更新个人信息
@@ -141,6 +151,7 @@ def updateUserInfo(request):
     """
     pass
 
+@csrf_exempt
 def getUserDetail(request):
     """
     获取用户详细信息
