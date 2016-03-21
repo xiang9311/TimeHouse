@@ -12,9 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 # import common_pb2 as common__pb2
-
 from . import common_pb2 as common__pb2
-
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='pilot.proto',

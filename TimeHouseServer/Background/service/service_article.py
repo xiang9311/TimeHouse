@@ -90,7 +90,6 @@ def getArticlesFromTblArticles(tblArticles, articles):
     :param tblArticles:
     :return:
     """
-
     for tblArticle in tblArticles:
         article = articles.add()
         getArticleFromTblArticle(tblArticle, article)
@@ -108,12 +107,14 @@ def getArticleFromTblArticle(tblArticle, article):
 
     article.id = tblArticle.id
     article.readCount = tblArticle.read_count
+    article.shareCount = tblArticle.share_count
+    article.authorName = tblArticle.author_name
     article.contentType = tblArticle.content_type
     article.articleType = tblArticle.article_type
     article.title = tblArticle.title
     article.subContent = tblArticle.sub_content
     article.content = tblArticle.content
-    article.coverUrl = tblArticle.cover_url
+    article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
     article.url = tblArticle.content_url
     article.createTime = date2str(tblArticle.create_time)
 
