@@ -1,6 +1,6 @@
 __author__ = '祥祥'
 
-from Background.models import ArticleCulture, ArticleForeign, ArticleHistory, ArticleHuman, ArticleJoke, ArticleLiterature, ArticleNews, ArticlePhilosophy, ArticlePhoto, TextAndImage
+from Background.models import ArticleCulture, ArticleForeign, ArticleHistory, ArticleHuman, ArticleJoke, ArticleLiterature, ArticleDeep, ArticlePhilosophy, ArticlePhoto, TextAndImage
 
 from Background.protocol.common_pb2 import Category
 from Background import constant
@@ -21,27 +21,26 @@ from . import service_user
 #   JOKE = 9;          // 笑话
 # }
 
-Articles = [ArticleNews    # 默认使用news
-            , ArticleNews
-            , ArticleHistory
-            , ArticleLiterature
-            , ArticlePhilosophy
-            , ArticleForeign
-            , ArticleHuman
-            , ArticleCulture
+Articles = [ArticleDeep    # 默认使用news
+            , ArticleDeep
             , ArticlePhoto
-            , ArticleJoke]
+            , ArticleHuman
+            , ArticleJoke
+            , ArticleForeign]
 
 Categorys = ['error'
-             , '时事'
-             , '历史'
-             , '文学'
-             , '哲学'
-             , '外语'
+             , '深度'
+             , '图说'
              , '人物'
-             , '文化'
-             , '摄影'
-             , '笑话']
+             , '逗你开心'
+             , '外语']
+
+Categorys_dict = { 'categorys' : [{'index':1, 'category':'深度'}
+                                  ,{'index':2, 'category':'图说'}
+                                  ,{'index':3, 'category':'人物'}
+                                  ,{'index':4, 'category':'逗你开心'}
+                                  ,{'index':5, 'category':'外语'}]
+                   }
 
 def getArticles(userId, category, index, articles):
     """

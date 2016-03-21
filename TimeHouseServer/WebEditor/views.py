@@ -59,7 +59,8 @@ def editorPage(request):
     :return:
     """
     pageType = request.GET.get('type','textEditor')
-    return render(request, 'WebEditor/'+pageType+'.html')
+    from Background.service.service_article import Categorys_dict
+    return render(request, 'WebEditor/'+pageType+'.html', Categorys_dict)
 
 
 def userDetail(request):

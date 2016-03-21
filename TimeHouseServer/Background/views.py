@@ -52,8 +52,6 @@ def getArticles(request):
     request_common = request10001.common
     params = request10001.params
 
-    articles = None
-
     try:
 
         response10001 = reader_pb2.Response10001()

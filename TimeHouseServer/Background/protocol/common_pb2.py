@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='common.proto',
   package='com.xiang.proto',
   syntax='proto3',
-  serialized_pb=b'\n\x0c\x63ommon.proto\x12\x0f\x63om.xiang.proto\"u\n\rRequestCommon\x12\x0e\n\x06userid\x18\x01 \x01(\t\x12\x0f\n\x07userkey\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x10\n\x08platform\x18\x06 \x01(\x05\"a\n\x0eResponseCommon\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0e\n\x06userid\x18\x05 \x01(\t\"4\n\x08Organize\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\":\n\x0cImageAndText\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\"\xc9\x02\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x11\n\treadCount\x18\x03 \x01(\x05\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\x05\x12\x13\n\x0b\x61rticleType\x18\x05 \x01(\x05\x12\r\n\x05title\x18\x06 \x01(\t\x12\x12\n\nsubContent\x18\x07 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x08 \x01(\t\x12\x10\n\x08\x63overUrl\x18\t \x01(\t\x12\x34\n\rimageAndTexts\x18\n \x03(\x0b\x32\x1d.com.xiang.proto.ImageAndText\x12\x0b\n\x03url\x18\x0b \x01(\t\x12+\n\x08\x63\x61tegory\x18\x0c \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x12\n\ncreateTime\x18\r \x01(\t\"\x99\x01\n\x07\x43ollect\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x12\n\nsubContent\x18\x03 \x01(\t\x12\x13\n\x0b\x63ollectTime\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\x05\x12\x0b\n\x03url\x18\x06 \x01(\t\x12\x11\n\tarticleId\x18\x07 \x01(\x05\"\x88\x01\n\nDetailUser\x12\x0e\n\x06userId\x18\x01 \x01(\x05\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\x12\r\n\x05wx_no\x18\x04 \x01(\t\x12\r\n\x05wb_no\x18\x05 \x01(\t\x12*\n\x08\x61rticles\x18\x06 \x03(\x0b\x32\x18.com.xiang.proto.Article*\x85\x01\n\x08\x43\x61tegory\x12\x08\n\x04MAIN\x10\x00\x12\x08\n\x04NEWS\x10\x01\x12\x0b\n\x07HISTORY\x10\x02\x12\x0e\n\nLITERATURE\x10\x03\x12\x0e\n\nPHILOSOPHY\x10\x04\x12\x0b\n\x07\x46OREIGN\x10\x05\x12\t\n\x05HUMAN\x10\x06\x12\x0b\n\x07\x43ULTURE\x10\x07\x12\t\n\x05PHOTO\x10\x08\x12\x08\n\x04JOKE\x10\tb\x06proto3'
+  serialized_pb=b'\n\x0c\x63ommon.proto\x12\x0f\x63om.xiang.proto\"u\n\rRequestCommon\x12\x0e\n\x06userid\x18\x01 \x01(\t\x12\x0f\n\x07userkey\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x10\n\x08platform\x18\x06 \x01(\x05\"a\n\x0eResponseCommon\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0e\n\x06userid\x18\x05 \x01(\t\"4\n\x08Organize\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\":\n\x0cImageAndText\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\"\xdd\x02\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\x05\x12\x13\n\x0b\x61rticleType\x18\x05 \x01(\x05\x12\r\n\x05title\x18\x06 \x01(\t\x12\x12\n\nsubContent\x18\x07 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x08 \x01(\t\x12\x10\n\x08\x63overUrl\x18\t \x01(\t\x12\x34\n\rimageAndTexts\x18\n \x03(\x0b\x32\x1d.com.xiang.proto.ImageAndText\x12\x0b\n\x03url\x18\x0b \x01(\t\x12+\n\x08\x63\x61tegory\x18\x0c \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x12\n\ncreateTime\x18\r \x01(\t\x12\x11\n\treadCount\x18\x03 \x01(\x05\x12\x12\n\nshareCount\x18\x0e \x01(\x05\"\x99\x01\n\x07\x43ollect\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x12\n\nsubContent\x18\x03 \x01(\t\x12\x13\n\x0b\x63ollectTime\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\x05\x12\x0b\n\x03url\x18\x06 \x01(\t\x12\x11\n\tarticleId\x18\x07 \x01(\x05\"\x88\x01\n\nDetailUser\x12\x0e\n\x06userId\x18\x01 \x01(\x05\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\x12\r\n\x05wx_no\x18\x04 \x01(\t\x12\r\n\x05wb_no\x18\x05 \x01(\t\x12*\n\x08\x61rticles\x18\x06 \x03(\x0b\x32\x18.com.xiang.proto.Article*O\n\x08\x43\x61tegory\x12\x08\n\x04MAIN\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01\x12\n\n\x06IMAGES\x10\x02\x12\n\n\x06PEOPLE\x10\x03\x12\n\n\x06\x46ORFUN\x10\x04\x12\x0b\n\x07\x46OREIGN\x10\x05\x62\x06proto3'
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -33,60 +33,40 @@ _CATEGORY = _descriptor.EnumDescriptor(
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='NEWS', index=1, number=1,
+      name='DEEP', index=1, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='HISTORY', index=2, number=2,
+      name='IMAGES', index=2, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='LITERATURE', index=3, number=3,
+      name='PEOPLE', index=3, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PHILOSOPHY', index=4, number=4,
+      name='FORFUN', index=4, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FOREIGN', index=5, number=5,
       options=None,
       type=None),
-    _descriptor.EnumValueDescriptor(
-      name='HUMAN', index=6, number=6,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CULTURE', index=7, number=7,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='PHOTO', index=8, number=8,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='JOKE', index=9, number=9,
-      options=None,
-      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=993,
-  serialized_end=1126,
+  serialized_start=1012,
+  serialized_end=1091,
 )
 _sym_db.RegisterEnumDescriptor(_CATEGORY)
 
 Category = enum_type_wrapper.EnumTypeWrapper(_CATEGORY)
 MAIN = 0
-NEWS = 1
-HISTORY = 2
-LITERATURE = 3
-PHILOSOPHY = 4
+DEEP = 1
+IMAGES = 2
+PEOPLE = 3
+FORFUN = 4
 FOREIGN = 5
-HUMAN = 6
-CULTURE = 7
-PHOTO = 8
-JOKE = 9
 
 
 
@@ -327,79 +307,86 @@ _ARTICLE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='readCount', full_name='com.xiang.proto.Article.readCount', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='contentType', full_name='com.xiang.proto.Article.contentType', index=3,
+      name='contentType', full_name='com.xiang.proto.Article.contentType', index=2,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='articleType', full_name='com.xiang.proto.Article.articleType', index=4,
+      name='articleType', full_name='com.xiang.proto.Article.articleType', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='title', full_name='com.xiang.proto.Article.title', index=5,
+      name='title', full_name='com.xiang.proto.Article.title', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='subContent', full_name='com.xiang.proto.Article.subContent', index=6,
+      name='subContent', full_name='com.xiang.proto.Article.subContent', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='content', full_name='com.xiang.proto.Article.content', index=7,
+      name='content', full_name='com.xiang.proto.Article.content', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='coverUrl', full_name='com.xiang.proto.Article.coverUrl', index=8,
+      name='coverUrl', full_name='com.xiang.proto.Article.coverUrl', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='imageAndTexts', full_name='com.xiang.proto.Article.imageAndTexts', index=9,
+      name='imageAndTexts', full_name='com.xiang.proto.Article.imageAndTexts', index=8,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='url', full_name='com.xiang.proto.Article.url', index=10,
+      name='url', full_name='com.xiang.proto.Article.url', index=9,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='category', full_name='com.xiang.proto.Article.category', index=11,
+      name='category', full_name='com.xiang.proto.Article.category', index=10,
       number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='createTime', full_name='com.xiang.proto.Article.createTime', index=12,
+      name='createTime', full_name='com.xiang.proto.Article.createTime', index=11,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='readCount', full_name='com.xiang.proto.Article.readCount', index=12,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shareCount', full_name='com.xiang.proto.Article.shareCount', index=13,
+      number=14, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -416,7 +403,7 @@ _ARTICLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=366,
-  serialized_end=695,
+  serialized_end=715,
 )
 
 
@@ -488,8 +475,8 @@ _COLLECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=698,
-  serialized_end=851,
+  serialized_start=718,
+  serialized_end=871,
 )
 
 
@@ -554,8 +541,8 @@ _DETAILUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=854,
-  serialized_end=990,
+  serialized_start=874,
+  serialized_end=1010,
 )
 
 _ARTICLE.fields_by_name['organize'].message_type = _ORGANIZE

@@ -30,7 +30,7 @@ class OrganizationAdmin(models.Model):
     pw_md5 = models.CharField(max_length=70)
     create_time = models.DateTimeField()
 
-class ArticleNews(models.Model):
+class ArticleDeep(models.Model):
     """
     时事
     """
