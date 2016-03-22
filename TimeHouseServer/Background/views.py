@@ -3,7 +3,7 @@ from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from .service import service_article
+from .service import service_article, service_user
 
 from .protocol import common_pb2
 from .protocol import reader_pb2
@@ -48,12 +48,10 @@ def getArticles(request):
         request10001.MergeFromString(request.read())
     except:
         pass
-
     request_common = request10001.common
     params = request10001.params
 
     try:
-
         response10001 = reader_pb2.Response10001()
 
         response_common = response10001.common
@@ -155,4 +153,32 @@ def getUserDetail(request):
     :param requets:
     :return:
     """
+    request11006 = reader_pb2.Request11006()
+    try:
+        request11006.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request11006.common
+    params = request11006.params
+
+    try:
+        response11006 = reader_pb2.Response11006()
+
+        response_common = response11006.common
+        data = response11006.data
+
+        initCommonResponse(0, 'success', 10001, request_common.userid, response_common)
+
+        detailUser = data.detailUser
+        articles = detailUser.articles
+        if params.needArticles:
+            service_article.getArticlesByOrgId(request_common.userid, params.orgId, articles)
+        service_user.getOrganizeById(params.orgId, detailUser)
+
+        # return HttpResponse(response11006.SerializeToString())
+        return HttpResponse(str(response11006))
+    except Exception as error:
+        return HttpResponse("error : " + str(error.args))
+
+
     pass

@@ -64,6 +64,20 @@ def getArticles(userId, category, index, articles):
         getArticlesFromTblArticles(tblArticles, articles)
 
 
+def getArticlesByOrgId(userId, orgId, articles):
+    """
+    获取组织的文章列表
+    :param userId:
+    :param orgId:
+    :param articles:
+    :return:
+    """
+    for i in range(0,len(Articles)):
+        CurrentArticle = Articles[i]
+        tblArticles = CurrentArticle.objects.filter(organization_id=orgId).order_by('create_time')
+        getArticlesFromTblArticles(tblArticles, articles)
+    pass
+
 def getImageAndTexts(article_id, imageAndTexts):
     """
     通过文章Id获取该文章下的图文内容
