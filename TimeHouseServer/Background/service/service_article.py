@@ -2,7 +2,7 @@ __author__ = '祥祥'
 
 from Background.models import ArticleCulture, ArticleForeign, ArticleHistory, ArticleHuman, ArticleJoke, ArticleLiterature, ArticleDeep, ArticlePhilosophy, ArticlePhoto, TextAndImage
 
-from Background.protocol.common_pb2 import Category
+from Background.protocol.common_pb2 import Category, ContentType
 from Background import constant
 from Background.protocol import common_pb2
 from Background import util
@@ -39,8 +39,12 @@ Categorys_dict = { 'categorys' : [{'index':1, 'category':'深度'}
                                   ,{'index':2, 'category':'图说'}
                                   ,{'index':3, 'category':'人物'}
                                   ,{'index':4, 'category':'逗你开心'}
-                                  ,{'index':5, 'category':'外语'}]
-                   }
+                                  ,{'index':5, 'category':'外语'}],
+                   'contentType' : [
+                       {'index':1, 'type':'普通文章'},
+                       {'index':0, 'type':'标题和大图'},
+                       {'index':2, 'type':'短文'}
+                   ]}
 
 def getArticles(userId, category, index, articles):
     """
@@ -128,7 +132,13 @@ def getArticleFromTblArticle(tblArticle, article):
     article.title = tblArticle.title
     article.subContent = tblArticle.sub_content
     article.content = tblArticle.content
-    article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
+
+    # 如果是显示大图，则返回完整图
+    if not (article.contentType == ContentType.BIG_IMAGE):
+        article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
+    else:
+        article.coverUrl = util.getImageUrl(tblArticle.cover_url)
+
     article.url = tblArticle.content_url
     article.createTime = date2str(tblArticle.create_time)
 

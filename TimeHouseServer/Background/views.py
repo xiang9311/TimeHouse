@@ -13,12 +13,6 @@ import time
 
 
 # Create your views here.
-@csrf_exempt
-def test(request):
-    article = common_pb2.Article()
-    article.id = 123123
-    article.title = 'This is title'
-    return HttpResponse(article.SerializeToString())
 
 def initCommonResponse(code, message, cmdid, userid, common):
     """

@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='common.proto',
   package='com.xiang.proto',
   syntax='proto3',
-  serialized_pb=b'\n\x0c\x63ommon.proto\x12\x0f\x63om.xiang.proto\"u\n\rRequestCommon\x12\x0e\n\x06userid\x18\x01 \x01(\t\x12\x0f\n\x07userkey\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x10\n\x08platform\x18\x06 \x01(\x05\"a\n\x0eResponseCommon\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0e\n\x06userid\x18\x05 \x01(\t\"4\n\x08Organize\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\":\n\x0cImageAndText\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\"\xf1\x02\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\x05\x12\x13\n\x0b\x61rticleType\x18\x05 \x01(\x05\x12\r\n\x05title\x18\x06 \x01(\t\x12\x12\n\nsubContent\x18\x07 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x08 \x01(\t\x12\x10\n\x08\x63overUrl\x18\t \x01(\t\x12\x34\n\rimageAndTexts\x18\n \x03(\x0b\x32\x1d.com.xiang.proto.ImageAndText\x12\x0b\n\x03url\x18\x0b \x01(\t\x12+\n\x08\x63\x61tegory\x18\x0c \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x12\n\ncreateTime\x18\r \x01(\t\x12\x11\n\treadCount\x18\x03 \x01(\x05\x12\x12\n\nshareCount\x18\x0e \x01(\x05\x12\x12\n\nauthorName\x18\x0f \x01(\t\"\x99\x01\n\x07\x43ollect\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x12\n\nsubContent\x18\x03 \x01(\t\x12\x13\n\x0b\x63ollectTime\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\x05\x12\x0b\n\x03url\x18\x06 \x01(\t\x12\x11\n\tarticleId\x18\x07 \x01(\x05\"\x88\x01\n\nDetailUser\x12\x0e\n\x06userId\x18\x01 \x01(\x05\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\x12\r\n\x05wx_no\x18\x04 \x01(\t\x12\r\n\x05wb_no\x18\x05 \x01(\t\x12*\n\x08\x61rticles\x18\x06 \x03(\x0b\x32\x18.com.xiang.proto.Article*O\n\x08\x43\x61tegory\x12\x08\n\x04MAIN\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01\x12\n\n\x06IMAGES\x10\x02\x12\n\n\x06PEOPLE\x10\x03\x12\n\n\x06\x46ORFUN\x10\x04\x12\x0b\n\x07\x46OREIGN\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\x0c\x63ommon.proto\x12\x0f\x63om.xiang.proto\"u\n\rRequestCommon\x12\x0e\n\x06userid\x18\x01 \x01(\t\x12\x0f\n\x07userkey\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0f\n\x07version\x18\x05 \x01(\t\x12\x10\n\x08platform\x18\x06 \x01(\x05\"a\n\x0eResponseCommon\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05\x63mdid\x18\x03 \x01(\x05\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\x12\x0e\n\x06userid\x18\x05 \x01(\t\"4\n\x08Organize\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\":\n\x0cImageAndText\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08imageUrl\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\"\x8f\x03\n\x07\x41rticle\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x31\n\x0b\x63ontentType\x18\x04 \x01(\x0e\x32\x1c.com.xiang.proto.ContentType\x12\x13\n\x0b\x61rticleType\x18\x05 \x01(\x05\x12\r\n\x05title\x18\x06 \x01(\t\x12\x12\n\nsubContent\x18\x07 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x08 \x01(\t\x12\x10\n\x08\x63overUrl\x18\t \x01(\t\x12\x34\n\rimageAndTexts\x18\n \x03(\x0b\x32\x1d.com.xiang.proto.ImageAndText\x12\x0b\n\x03url\x18\x0b \x01(\t\x12+\n\x08\x63\x61tegory\x18\x0c \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x12\n\ncreateTime\x18\r \x01(\t\x12\x11\n\treadCount\x18\x03 \x01(\x05\x12\x12\n\nshareCount\x18\x0e \x01(\x05\x12\x12\n\nauthorName\x18\x0f \x01(\t\"\x99\x01\n\x07\x43ollect\x12\n\n\x02id\x18\x01 \x01(\x05\x12+\n\x08organize\x18\x02 \x01(\x0b\x32\x19.com.xiang.proto.Organize\x12\x12\n\nsubContent\x18\x03 \x01(\t\x12\x13\n\x0b\x63ollectTime\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\x05\x12\x0b\n\x03url\x18\x06 \x01(\t\x12\x11\n\tarticleId\x18\x07 \x01(\x05\"\x88\x01\n\nDetailUser\x12\x0e\n\x06userId\x18\x01 \x01(\x05\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x03 \x01(\t\x12\r\n\x05wx_no\x18\x04 \x01(\t\x12\r\n\x05wb_no\x18\x05 \x01(\t\x12*\n\x08\x61rticles\x18\x06 \x03(\x0b\x32\x18.com.xiang.proto.Article*O\n\x08\x43\x61tegory\x12\x08\n\x04MAIN\x10\x00\x12\x08\n\x04\x44\x45\x45P\x10\x01\x12\n\n\x06IMAGES\x10\x02\x12\n\n\x06PEOPLE\x10\x03\x12\n\n\x06\x46ORFUN\x10\x04\x12\x0b\n\x07\x46OREIGN\x10\x05*L\n\x0b\x43ontentType\x12\r\n\tBIG_IMAGE\x10\x00\x12\x0b\n\x07\x41RTICLE\x10\x01\x12\x11\n\rSHORT_ARTICLE\x10\x02\x12\x0e\n\nIMAGE_TEXT\x10\x03\x62\x06proto3'
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -55,18 +55,53 @@ _CATEGORY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1032,
-  serialized_end=1111,
+  serialized_start=1062,
+  serialized_end=1141,
 )
 _sym_db.RegisterEnumDescriptor(_CATEGORY)
 
 Category = enum_type_wrapper.EnumTypeWrapper(_CATEGORY)
+_CONTENTTYPE = _descriptor.EnumDescriptor(
+  name='ContentType',
+  full_name='com.xiang.proto.ContentType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BIG_IMAGE', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ARTICLE', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SHORT_ARTICLE', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='IMAGE_TEXT', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=1143,
+  serialized_end=1219,
+)
+_sym_db.RegisterEnumDescriptor(_CONTENTTYPE)
+
+ContentType = enum_type_wrapper.EnumTypeWrapper(_CONTENTTYPE)
 MAIN = 0
 DEEP = 1
 IMAGES = 2
 PEOPLE = 3
 FORFUN = 4
 FOREIGN = 5
+BIG_IMAGE = 0
+ARTICLE = 1
+SHORT_ARTICLE = 2
+IMAGE_TEXT = 3
 
 
 
@@ -308,7 +343,7 @@ _ARTICLE = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='contentType', full_name='com.xiang.proto.Article.contentType', index=2,
-      number=4, type=5, cpp_type=1, label=1,
+      number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -410,7 +445,7 @@ _ARTICLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=366,
-  serialized_end=735,
+  serialized_end=765,
 )
 
 
@@ -482,8 +517,8 @@ _COLLECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=738,
-  serialized_end=891,
+  serialized_start=768,
+  serialized_end=921,
 )
 
 
@@ -548,11 +583,12 @@ _DETAILUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=894,
-  serialized_end=1030,
+  serialized_start=924,
+  serialized_end=1060,
 )
 
 _ARTICLE.fields_by_name['organize'].message_type = _ORGANIZE
+_ARTICLE.fields_by_name['contentType'].enum_type = _CONTENTTYPE
 _ARTICLE.fields_by_name['imageAndTexts'].message_type = _IMAGEANDTEXT
 _ARTICLE.fields_by_name['category'].enum_type = _CATEGORY
 _COLLECT.fields_by_name['organize'].message_type = _ORGANIZE
@@ -565,6 +601,7 @@ DESCRIPTOR.message_types_by_name['Article'] = _ARTICLE
 DESCRIPTOR.message_types_by_name['Collect'] = _COLLECT
 DESCRIPTOR.message_types_by_name['DetailUser'] = _DETAILUSER
 DESCRIPTOR.enum_types_by_name['Category'] = _CATEGORY
+DESCRIPTOR.enum_types_by_name['ContentType'] = _CONTENTTYPE
 
 RequestCommon = _reflection.GeneratedProtocolMessageType('RequestCommon', (_message.Message,), dict(
   DESCRIPTOR = _REQUESTCOMMON,
