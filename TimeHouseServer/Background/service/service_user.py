@@ -14,7 +14,7 @@ def verifyUserKey(request):
 
 
 
-def getOrganizeById(userId, detailUser):
+def getOrganizeById(userId, organize):
     """
     通过用户的id获取proto中的组织对象
     :param userId:
@@ -22,10 +22,24 @@ def getOrganizeById(userId, detailUser):
     """
     u_organize = Organization.objects.get(id=userId)
 
-    detailUser.userId = u_organize.id
-    detailUser.userName = u_organize.name
-    detailUser.avatar = util.getImageUrl200_200(u_organize.avatar)
-    detailUser.wx_no = u_organize.wx_no
-    detailUser.wb_no = u_organize.wb_no
+    organize.id = u_organize.id
+    organize.name = u_organize.name
+    organize.avatar = util.getImageUrl200_200(u_organize.avatar)
+    return organize
 
+def getOrganizeDetailById(userId, organize):
+    """
+    通过id获取组织详情
+    :param userId:
+    :param organize:
+    :return:
+    """
+    u_organize = Organization.objects.get(id=userId)
+
+    organize.userId = u_organize.id
+    organize.userName = u_organize.name
+    organize.avatar = util.getImageUrl200_200(u_organize.avatar)
+    organize.wx_no = u_organize.wx_no
+    organize.wb_no = u_organize.wb_no
+    pass
 

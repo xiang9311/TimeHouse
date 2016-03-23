@@ -173,7 +173,7 @@ def getUserDetail(request):
         articles = detailUser.articles
         if params.needArticles:
             service_article.getArticlesByOrgId(request_common.userid, params.orgId, articles)
-        service_user.getOrganizeById(params.orgId, detailUser)
+        service_user.getOrganizeDetailById(params.orgId, detailUser)
 
         # return HttpResponse(response11006.SerializeToString())
         return HttpResponse(str(response11006))
