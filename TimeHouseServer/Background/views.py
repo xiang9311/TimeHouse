@@ -29,6 +29,21 @@ def initCommonResponse(code, message, cmdid, userid, common):
     common.timestamp = int(time.time() * 1000)
     common.userid = userid
 
+def initCommonErrorResponse( cmdid, userid, common):
+    """
+    根据字段构造返回的common
+    :param code:
+    :param message:
+    :param cmdid:
+    :param userid:
+    :return:
+    """
+    common.code = 100
+    common.message = "You have found an ERROR."
+    common.cmdid = cmdid
+    common.timestamp = int(time.time() * 1000)
+    common.userid = userid
+
 @csrf_exempt
 def getArticles(request):
     """
@@ -61,7 +76,10 @@ def getArticles(request):
         return HttpResponse(response10001.SerializeToString())
         # return HttpResponse(str(response10001))
     except Exception as error:
-        return HttpResponse("error : " + str(error.args))
+        response10001 = reader_pb2.Response10001()
+        response_common = response10001.common
+        initCommonErrorResponse(10001, request_common.userid, response_common)
+        return HttpResponse(response10001.SerializeToString())
 
 @csrf_exempt
 def searchArticles(request):
@@ -172,7 +190,10 @@ def getUserDetail(request):
         return HttpResponse(response11006.SerializeToString())
         # return HttpResponse(str(response11006))
     except Exception as error:
-        return HttpResponse("error : " + str(error.args))
+        response11006 = pilot_pb2.Response11006()
+        response_common = response11006.common
+        initCommonErrorResponse(11006, request_common.userid, response_common)
+        return HttpResponse(response11006.SerializeToString())
 
 
     pass

@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Background/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="3477">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            <state vertical-scroll-proportion="8.538823" vertical-offset="0" max-vertical-offset="3876">
+              <caret line="191" column="30" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -73,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26912183" vertical-offset="2470" max-vertical-offset="3002">
+            <state vertical-scroll-proportion="-1.6101695" vertical-offset="2470" max-vertical-offset="3002">
               <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
               <folding>
                 <element signature="e#19#201#0" expanded="true" />
@@ -147,12 +147,12 @@
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/register.html" />
         <option value="$PROJECT_DIR$/Background/protocol/pilot_pb2.py" />
         <option value="$PROJECT_DIR$/Background/service/service_user.py" />
-        <option value="$PROJECT_DIR$/Background/views.py" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/textEditor.html" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html" />
         <option value="$PROJECT_DIR$/Background/urls.py" />
         <option value="$PROJECT_DIR$/Background/util.py" />
         <option value="$PROJECT_DIR$/Background/service/service_article.py" />
+        <option value="$PROJECT_DIR$/Background/views.py" />
       </list>
     </option>
   </component>
@@ -1053,16 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="3477">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/textEditor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.0" vertical-offset="1030" max-vertical-offset="6574">
@@ -1105,10 +1095,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26912183" vertical-offset="2470" max-vertical-offset="3002">
+        <state vertical-scroll-proportion="-1.6101695" vertical-offset="2470" max-vertical-offset="3002">
           <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
           <folding>
             <element signature="e#19#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Background/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.538823" vertical-offset="0" max-vertical-offset="3876">
+          <caret line="191" column="30" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
