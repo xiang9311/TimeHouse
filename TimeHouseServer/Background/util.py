@@ -15,4 +15,4 @@ def getImageUrl200_200(imageName):
     return 'http://7xo9gq.com1.z0.glb.clouddn.com/' + imageName + '?imageView2/1/w/200/h/200/q/90'
 
 def getImageUrl(imageName):
-    return 'http://7xo9gq.com1.z0.glb.clouddn.com/' + imageName
+    return 'http://7xo9gq.com1.z0.glb.clouddn.com/' + imageName + ''
