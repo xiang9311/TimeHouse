@@ -7,6 +7,11 @@ urlpatterns = [
     url(r'^test$', views.test, name='test'),
 
     # getArticles
-    url(r'^articles/getArticles', views.getArticles),
+    url(r'^articles/getArticles$', views.getArticles),
+
+    # pilot
+
+    # getUserDetail
+    url(r'^pilot/getUserDetail$', views.getUserDetail),
 
 ]
