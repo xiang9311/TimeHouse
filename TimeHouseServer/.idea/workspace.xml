@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8644068" vertical-offset="2375" max-vertical-offset="3002">
-              <caret line="137" column="39" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.48441926" vertical-offset="2375" max-vertical-offset="3002">
+              <caret line="134" column="61" selection-start-line="134" selection-start-column="61" selection-end-line="134" selection-end-column="61" />
               <folding>
                 <element signature="e#19#201#0" expanded="true" />
               </folding>
@@ -85,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73176473" vertical-offset="12" max-vertical-offset="437">
+            <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="437">
               <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
               <folding />
             </state>
@@ -141,8 +141,8 @@
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/textEditor.html" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html" />
         <option value="$PROJECT_DIR$/Background/urls.py" />
-        <option value="$PROJECT_DIR$/Background/service/service_article.py" />
         <option value="$PROJECT_DIR$/Background/util.py" />
+        <option value="$PROJECT_DIR$/Background/service/service_article.py" />
       </list>
     </option>
   </component>
@@ -1085,21 +1085,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
+    <entry file="file://$PROJECT_DIR$/Background/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8644068" vertical-offset="2375" max-vertical-offset="3002">
-          <caret line="137" column="39" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
-          <folding>
-            <element signature="e#19#201#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="437">
+          <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/util.py">
+    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73176473" vertical-offset="12" max-vertical-offset="437">
-          <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
-          <folding />
+        <state vertical-scroll-proportion="0.48441926" vertical-offset="2375" max-vertical-offset="3002">
+          <caret line="134" column="61" selection-start-line="134" selection-start-column="61" selection-end-line="134" selection-end-column="61" />
+          <folding>
+            <element signature="e#19#201#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

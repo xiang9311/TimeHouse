@@ -132,12 +132,12 @@ def getArticleFromTblArticle(tblArticle, article):
     article.title = tblArticle.title
     article.subContent = tblArticle.sub_content
     article.content = tblArticle.content
-    # article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
+    article.coverUrl = util.getImageUrl(tblArticle.cover_url)
     # 如果是显示大图，则返回完整图
-    if tblArticle.content_type == ContentType.BIG_IMAGE:
-        article.coverUrl = util.getImageUrl(tblArticle.cover_url)
-    else:
-        article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
+    # if tblArticle.content_type == ContentType.BIG_IMAGE:
+    #     article.coverUrl = util.getImageUrl(tblArticle.cover_url)
+    # else:
+    #     article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
 
     article.url = tblArticle.content_url
     article.createTime = date2str(tblArticle.create_time)
