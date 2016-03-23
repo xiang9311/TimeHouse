@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .service import service_article, service_user
 
 from .protocol import common_pb2
-from .protocol import reader_pb2
+from .protocol import reader_pb2, pilot_pb2
 
 from . import constant
 import time
@@ -153,7 +153,7 @@ def getUserDetail(request):
     :param requets:
     :return:
     """
-    request11006 = reader_pb2.Request11006()
+    request11006 = pilot_pb2.Request11006()
     try:
         request11006.MergeFromString(request.read())
     except:
@@ -162,7 +162,7 @@ def getUserDetail(request):
     params = request11006.params
 
     try:
-        response11006 = reader_pb2.Response11006()
+        response11006 = pilot_pb2.Response11006()
 
         response_common = response11006.common
         data = response11006.data
