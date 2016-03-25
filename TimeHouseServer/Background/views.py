@@ -39,7 +39,7 @@ def initCommonErrorResponse(cmdid, userid, common):
     :return:
     """
     common.code = 100
-    common.message = "You have found an ERROR."
+    common.message = "You have found an ERROR.--message from background."
     common.cmdid = cmdid
     common.timestamp = int(time.time() * 1000)
     common.userid = userid
@@ -209,12 +209,12 @@ def getQiniuToken(request):
     params = request_11007.params
 
     try:
-        response11007 = pilot_pb2.Response11006()
+        response11007 = pilot_pb2.Response11007()
 
         response_common = response11007.common
         data = response11007.data
 
-        initCommonResponse(0, 'success', 10001, request_common.userid, response_common)
+        initCommonResponse(0, 'success', 11007, request_common.userid, response_common)
 
         data.token = constant.getToken()
 
