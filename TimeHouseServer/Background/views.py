@@ -29,7 +29,7 @@ def initCommonResponse(code, message, cmdid, userid, common):
     common.timestamp = int(time.time() * 1000)
     common.userid = userid
 
-def initCommonErrorResponse( cmdid, userid, common):
+def initCommonErrorResponse(cmdid, userid, common):
     """
     根据字段构造返回的common
     :param code:
@@ -197,3 +197,30 @@ def getUserDetail(request):
 
 
     pass
+
+@csrf_exempt
+def getQiniuToken(request):
+    request_11007 = pilot_pb2.Request11007()
+    try:
+        request_11007.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_11007.common
+    params = request_11007.params
+
+    try:
+        response11007 = pilot_pb2.Response11006()
+
+        response_common = response11007.common
+        data = response11007.data
+
+        initCommonResponse(0, 'success', 10001, request_common.userid, response_common)
+
+        data.token = constant.getToken()
+
+        return HttpResponse(response11007.SerializeToString())
+    except Exception as error:
+        response11007 = pilot_pb2.Response11007()
+        response_common = response11007.common
+        initCommonErrorResponse(11007, request_common.userid, response_common)
+        return HttpResponse(response11007.SerializeToString())
