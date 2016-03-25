@@ -14,5 +14,7 @@ urlpatterns = [
 
     # 获取七牛token
     url(r'^pilot/getQiniuToken$', views.getQiniuToken),
+    url(r'^pilot/register$', views.register),
+    url(r'^pilot/login$', views.login),
 
 ]

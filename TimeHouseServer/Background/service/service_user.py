@@ -3,6 +3,7 @@ __author__ = '祥祥'
 from Background.models import User, Organization
 from Background.protocol import common_pb2
 from Background import util
+from WebEditor.constant import constant
 
 def verifyUserKey(request):
     """
@@ -42,4 +43,41 @@ def getOrganizeDetailById(userId, organize):
     organize.wx_no = u_organize.wx_no
     organize.wb_no = u_organize.wb_no
     pass
+
+def register(phoneNumber, userName, pw, userAvatarKey):
+    if not (phoneNumber and userAvatarKey and pw and userAvatarKey):
+        return False
+
+    users_use_name = User.objects.filter(name=userName)
+    if users_use_name:
+        # 该用户名已存在
+        return False
+
+    user = User()
+    user.name = userName
+    user.avatar = userAvatarKey
+    user.pw_md5 = pw
+    user.phone = phoneNumber
+    user.create_time = constant.getDatabaseTimeNow()
+    user.save()
+
+    return True
+
+def login(userName, pw):
+    """
+    登录
+    :param userName: 用户名或者手机号
+    :param pw:
+    :return:
+    """
+    users = User.objects.filter(phone=userName)
+    for user in users:
+        if user.pw_md5 == pw:
+            return True
+
+    users = User.objects.filter(name=userName)
+    for user in users:
+        if user.pw_md5 == pw:
+            return True
+    return False
 

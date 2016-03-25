@@ -129,6 +129,37 @@ def register(request):
     :param request:
     :return:
     """
+    cmdId = 11002
+    request_pro = pilot_pb2.Request11002()
+    try:
+        request_pro.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_pro.common
+    params = request_pro.params
+
+    try:
+        response_pro = pilot_pb2.Response11002()
+
+        response_common = response_pro.common
+        data = response_pro.data
+
+        phoneNumber = params.phoneNumber
+        userName = params.userName
+        pwMd5 = params.pwMd5
+        userAvatarKey = params.userAvatarKey
+
+        if service_user.register(phoneNumber, userName, pwMd5, userAvatarKey):
+            initCommonResponse(0, 'success', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+        else:
+            initCommonResponse(102, '注册失败', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+    except Exception as error:
+        response_pro = pilot_pb2.Response11002()
+        response_common = response_pro.common
+        initCommonErrorResponse(cmdId, request_common.userid, response_common)
+        return HttpResponse(response_pro.SerializeToString())
     pass
 
 @csrf_exempt
@@ -138,6 +169,37 @@ def login(request):
     :param request:
     :return:
     """
+    cmdId = 11003
+    request_pro = pilot_pb2.Request11003()
+    try:
+        request_pro.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_pro.common
+    params = request_pro.params
+
+    try:
+        response_pro = pilot_pb2.Response11003()
+
+        response_common = response_pro.common
+        data = response_pro.data
+
+        userName = params.username  # 用户名或手机号
+        pwMd5 = params.pwMd5
+
+        if service_user.login(userName, pwMd5):
+            initCommonResponse(0, "success", cmdId, request_common.userid, response_common)
+            request.session["userkey"] = 'agdfadsfadfadsf'
+        else:
+            initCommonResponse(1, "登录失败", cmdId, request_common.userid, response_common)
+            pass
+        return HttpResponse(response_pro.SerializeToString())
+
+    except Exception as error:
+        response_pro = pilot_pb2.Response11003()
+        response_common = response_pro.common
+        initCommonErrorResponse(cmdId, request_common.userid, response_common)
+        return HttpResponse(response_pro.SerializeToString())
     pass
 
 @csrf_exempt

@@ -7,6 +7,7 @@ class User(models.Model):
     """
     name = models.CharField(max_length=100)
     avatar = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
     pw_md5 = models.CharField(max_length=70)
     wx_no = models.CharField(max_length=100)
     wb_no = models.CharField(max_length=100)
