@@ -201,7 +201,7 @@ def login(request):
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
 
         from TimeHouseServer import logger
-        logger.debug(str(error))
+        logger.info(str(error))
 
         return HttpResponse(response_pro.SerializeToString())
     pass
