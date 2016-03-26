@@ -63,21 +63,28 @@ def register(phoneNumber, userName, pw, userAvatarKey):
 
     return True
 
-def login(userName, pw):
+def login(userName, pw, data):
     """
     登录
     :param userName: 用户名或者手机号
     :param pw:
+    :param data: 返回的数据
     :return:
     """
     users = User.objects.filter(phone=userName)
     for user in users:
         if user.pw_md5 == pw:
+            data.userName = user.name
+            data.userAvatar = util.getImageUrl(user.userAvatar)
+            data.phone = user.phone
             return True
 
     users = User.objects.filter(name=userName)
     for user in users:
         if user.pw_md5 == pw:
+            data.userName = user.name
+            data.userAvatar = util.getImageUrl(user.userAvatar)
+            data.phone = user.phone
             return True
     return False
 

@@ -187,7 +187,7 @@ def login(request):
         userName = params.username  # 用户名或手机号
         pwMd5 = params.pwMd5
 
-        if service_user.login(userName, pwMd5):
+        if service_user.login(userName, pwMd5, data):
             initCommonResponse(0, "success", cmdId, request_common.userid, response_common)
             request.session["userkey"] = 'agdfadsfadfadsf'
         else:
