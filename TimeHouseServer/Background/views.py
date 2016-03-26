@@ -199,6 +199,10 @@ def login(request):
         response_pro = pilot_pb2.Response11003()
         response_common = response_pro.common
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
+
+        from TimeHouseServer import logger
+        logger.debug(str(error))
+
         return HttpResponse(response_pro.SerializeToString())
     pass
 
