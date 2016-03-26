@@ -75,7 +75,7 @@ def login(userName, pw, data):
     for user in users:
         if user.pw_md5 == pw:
             data.userName = user.name
-            data.userAvatar = util.getImageUrl(user.userAvatar)
+            data.userAvatar = util.getImageUrl(user.avatar)
             data.phone = user.phone
             return True
 
@@ -83,7 +83,7 @@ def login(userName, pw, data):
     for user in users:
         if user.pw_md5 == pw:
             data.userName = user.name
-            data.userAvatar = util.getImageUrl(user.userAvatar)
+            data.userAvatar = util.getImageUrl(user.avatar)
             data.phone = user.phone
             return True
     return False
