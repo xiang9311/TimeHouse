@@ -93,10 +93,11 @@ def login(userName, pw, data):
     return False
 
 def collect(userId, articleId, category, optionType):
+    user = User.objects.get(id=userId)
     if optionType == reader_pb2.Request10003.COLLECT:
         mCollect = Collect()
         mCollect.article_id = articleId
-        mCollect.user_id = userId
+        mCollect.user_id = user
         mCollect.collect_type = int(category)
         mCollect.collect_time = constant.getDatabaseTimeNow()
         mCollect.save()
