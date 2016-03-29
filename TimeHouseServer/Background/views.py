@@ -122,6 +122,10 @@ def collectArticles(request):
             initCommonResponse(103, '操作失败', cmdId, request_common.userid, response_common)
             return HttpResponse(response_pro.SerializeToString())
     except Exception as error:
+
+        from TimeHouseServer import logger
+        logger.info(str(error))
+
         response_pro = reader_pb2.Response10003()
         response_common = response_pro.common
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
