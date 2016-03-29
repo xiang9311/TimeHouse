@@ -76,6 +76,7 @@ def login(userName, pw, data):
     users = User.objects.filter(phone=userName)
     for user in users:
         if user.pw_md5 == pw:
+            data.userId = user.id
             data.userName = user.name
             data.userAvatar = util.getImageUrl(user.avatar)
             data.phone = user.phone
@@ -84,6 +85,7 @@ def login(userName, pw, data):
     users = User.objects.filter(name=userName)
     for user in users:
         if user.pw_md5 == pw:
+            data.userId = user.id
             data.userName = user.name
             data.userAvatar = util.getImageUrl(user.avatar)
             data.phone = user.phone
