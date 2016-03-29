@@ -6,6 +6,7 @@ urlpatterns = [
 
     # getArticles
     url(r'^articles/getArticles$', views.getArticles),
+    url(r'^articles/collectArticles$', views.collectArticles),
 
     # pilot
 
@@ -16,5 +17,6 @@ urlpatterns = [
     url(r'^pilot/getQiniuToken$', views.getQiniuToken),
     url(r'^pilot/register$', views.register),
     url(r'^pilot/login$', views.login),
+
 
 ]
