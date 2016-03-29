@@ -93,14 +93,19 @@ def login(userName, pw, data):
     return False
 
 def collect(userId, articleId, category, optionType):
-    user = User.objects.get(id=userId)
+
     if optionType == reader_pb2.Request10003.COLLECT:
-        mCollect = Collect()
-        mCollect.article_id = articleId
-        mCollect.user_id = user
-        mCollect.collect_type = int(category)
-        mCollect.collect_time = constant.getDatabaseTimeNow()
-        mCollect.save()
+
+        collects = Collect.objects.filter(user_id=userId,article_id=articleId,collect_type=category)
+        if not collects:
+            mCollect = Collect()
+            mCollect.article_id = articleId
+            mCollect.user_id = userId
+            mCollect.collect_type = int(category)
+            mCollect.collect_time = constant.getDatabaseTimeNow()
+            mCollect.save()
+        else:
+            return True
     else:
         # 取消收藏
         mCollect = Collect.objects.filter(article_id=articleId, user_id=userId, collect_type=int(category))

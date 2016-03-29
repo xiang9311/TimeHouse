@@ -137,7 +137,7 @@ class Collect(models.Model):
     """
     收藏
     """
-    user_id = models.ForeignKey(User)
+    user_id = models.IntegerField()
     article_id = models.IntegerField()
     collect_type = models.IntegerField()
     collect_time = models.DateTimeField()
