@@ -1,6 +1,6 @@
 __author__ = '祥祥'
 
-from Background.models import ArticleCulture, ArticleForeign, ArticleHistory, ArticleHuman, ArticleJoke, ArticleLiterature, ArticleDeep, ArticlePhilosophy, ArticlePhoto, TextAndImage
+from Background.models import  ArticleForeign, ArticleHuman, ArticleJoke, ArticleDeep, ArticlePhoto, TextAndImage
 
 from Background.protocol.common_pb2 import Category, ContentType
 from Background import constant
