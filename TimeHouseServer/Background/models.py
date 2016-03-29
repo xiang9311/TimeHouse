@@ -48,6 +48,7 @@ class ArticleDeep(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleHistory(models.Model):
     """
@@ -66,6 +67,7 @@ class ArticleHistory(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleLiterature(models.Model):
     """
@@ -84,6 +86,7 @@ class ArticleLiterature(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticlePhilosophy(models.Model):
     """
@@ -102,6 +105,7 @@ class ArticlePhilosophy(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleForeign(models.Model):
     """
@@ -120,6 +124,7 @@ class ArticleForeign(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleHuman(models.Model):
     """
@@ -138,6 +143,7 @@ class ArticleHuman(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleCulture(models.Model):
     """
@@ -156,6 +162,7 @@ class ArticleCulture(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticlePhoto(models.Model):
     """
@@ -174,6 +181,7 @@ class ArticlePhoto(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class ArticleJoke(models.Model):
     """
@@ -192,6 +200,7 @@ class ArticleJoke(models.Model):
     collect_count = models.IntegerField()
     share_count = models.IntegerField()
     create_time = models.DateTimeField()
+    category = models.IntegerField()
 
 class TextAndImage(models.Model):
     articleId = models.IntegerField()

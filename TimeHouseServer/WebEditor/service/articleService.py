@@ -22,6 +22,7 @@ def addImageArticle(userId, title, category, contentType, articleType, images, t
     article.share_count = 0
     article.create_time = constant.getDatabaseTimeNow()
     article.author_name = author
+    article.category = category
     article.save()
 
     for i in range(0, len(texts)):
@@ -49,6 +50,7 @@ def addTextArticle(userId, cover, title, subContent, category, contentType, arti
     article.share_count = 0
     article.create_time = constant.getDatabaseTimeNow()
     article.author_name = author
+    article.category = category
     article.save()
     return True
 
@@ -68,6 +70,7 @@ def addWebArticle(userId, cover, title, subContent, category, contentType, artic
     article.share_count = 0
     article.create_time = constant.getDatabaseTimeNow()
     article.author_name = author
+    article.category = category
     article.save()
     return True
 

@@ -96,6 +96,36 @@ def collectArticles(request):
     收藏文章
     :return:
     """
+    cmdId = 10003
+    request_pro = reader_pb2.Request10003()
+    try:
+        request_pro.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_pro.common
+    params = request_pro.params
+
+    try:
+        response_pro = reader_pb2.Response10003()
+
+        response_common = response_pro.common
+        data = response_pro.data
+
+        articleId = params.articleId
+        category = params.category
+        optionType = params.optionType
+
+        if service_user.collect(request_common.userid, articleId, category, optionType):
+            initCommonResponse(0, 'success', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+        else:
+            initCommonResponse(103, '操作失败', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+    except Exception as error:
+        response_pro = reader_pb2.Response10003()
+        response_common = response_pro.common
+        initCommonErrorResponse(cmdId, request_common.userid, response_common)
+        return HttpResponse(response_pro.SerializeToString())
     pass
 
 @csrf_exempt

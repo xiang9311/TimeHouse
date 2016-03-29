@@ -1,9 +1,11 @@
 __author__ = '祥祥'
 
-from Background.models import User, Organization
+from Background.models import User, Organization, Collect
 from Background.protocol import common_pb2
 from Background import util
 from WebEditor.constant import constant
+
+from Background.protocol import reader_pb2
 
 def verifyUserKey(request):
     """
@@ -88,3 +90,17 @@ def login(userName, pw, data):
             return True
     return False
 
+def collect(userId, articleId, category, optionType):
+    if optionType == reader_pb2.Request10003.COLLECT:
+        mCollect = Collect()
+        mCollect.article_id = articleId
+        mCollect.user_id = userId
+        mCollect.collect_type = int(category)
+        mCollect.collect_time = constant.getDatabaseTimeNow()
+        mCollect.save()
+    else:
+        # 取消收藏
+        mCollect = Collect.objects.filter(article_id=articleId, user_id=userId, collect_type=int(category))
+        for c in mCollect:
+            c.delete()
+    return True

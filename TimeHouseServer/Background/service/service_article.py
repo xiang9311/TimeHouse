@@ -46,6 +46,14 @@ Categorys_dict = { 'categorys' : [{'index':1, 'category':'深度'}
                        {'index':2, 'type':'短文'}
                    ]}
 
+CategoryForProto = [
+    common_pb2.MAIN
+    , common_pb2.DEEP
+    , common_pb2.IMAGES
+    , common_pb2.PEOPLE
+    , common_pb2.FORFUN
+    , common_pb2.FOREIGN]
+
 def getArticles(userId, category, index, articles):
     """
     获取文章列表
@@ -132,6 +140,7 @@ def getArticleFromTblArticle(tblArticle, article):
     article.title = tblArticle.title
     article.subContent = tblArticle.sub_content
     article.content = tblArticle.content
+    article.category = getCategory(tblArticle.category)
     # article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
     # 如果是显示大图，则返回完整图
     if tblArticle.content_type == common_pb2.BIG_IMAGE:
@@ -151,3 +160,6 @@ def getArticleFromTblArticle(tblArticle, article):
     service_user.getOrganizeById(tblArticle.organization_id, article.organize)
 
     return article
+
+def getCategory(category):
+    return CategoryForProto[category]
