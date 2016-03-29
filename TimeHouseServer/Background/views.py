@@ -76,6 +76,10 @@ def getArticles(request):
         return HttpResponse(response10001.SerializeToString())
         # return HttpResponse(str(response10001))
     except Exception as error:
+
+        from TimeHouseServer import logger
+        logger.info(str(error))
+
         response10001 = reader_pb2.Response10001()
         response_common = response10001.common
         initCommonErrorResponse(10001, request_common.userid, response_common)
