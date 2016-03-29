@@ -50,62 +50,6 @@ class ArticleDeep(models.Model):
     create_time = models.DateTimeField()
     category = models.IntegerField()
 
-class ArticleHistory(models.Model):
-    """
-    历史
-    """
-    organization = models.ForeignKey(Organization)
-    author_name = models.CharField(max_length=100)
-    content_type = models.IntegerField()
-    article_type = models.IntegerField()
-    title = models.CharField(max_length=100)
-    sub_content = models.CharField(max_length=300)
-    content = models.TextField()
-    cover_url = models.CharField(max_length=100)
-    content_url = models.CharField(max_length=200)
-    read_count = models.IntegerField()
-    collect_count = models.IntegerField()
-    share_count = models.IntegerField()
-    create_time = models.DateTimeField()
-    category = models.IntegerField()
-
-class ArticleLiterature(models.Model):
-    """
-    文化
-    """
-    organization = models.ForeignKey(Organization)
-    author_name = models.CharField(max_length=100)
-    content_type = models.IntegerField()
-    article_type = models.IntegerField()
-    title = models.CharField(max_length=100)
-    sub_content = models.CharField(max_length=300)
-    content = models.TextField()
-    cover_url = models.CharField(max_length=100)
-    content_url = models.CharField(max_length=200)
-    read_count = models.IntegerField()
-    collect_count = models.IntegerField()
-    share_count = models.IntegerField()
-    create_time = models.DateTimeField()
-    category = models.IntegerField()
-
-class ArticlePhilosophy(models.Model):
-    """
-    哲学
-    """
-    organization = models.ForeignKey(Organization)
-    author_name = models.CharField(max_length=100)
-    content_type = models.IntegerField()
-    article_type = models.IntegerField()
-    title = models.CharField(max_length=100)
-    sub_content = models.CharField(max_length=300)
-    content = models.TextField()
-    cover_url = models.CharField(max_length=100)
-    content_url = models.CharField(max_length=200)
-    read_count = models.IntegerField()
-    collect_count = models.IntegerField()
-    share_count = models.IntegerField()
-    create_time = models.DateTimeField()
-    category = models.IntegerField()
 
 class ArticleForeign(models.Model):
     """
@@ -129,25 +73,6 @@ class ArticleForeign(models.Model):
 class ArticleHuman(models.Model):
     """
     人物
-    """
-    organization = models.ForeignKey(Organization)
-    author_name = models.CharField(max_length=100)
-    content_type = models.IntegerField()
-    article_type = models.IntegerField()
-    title = models.CharField(max_length=100)
-    sub_content = models.CharField(max_length=300)
-    content = models.TextField()
-    cover_url = models.CharField(max_length=100)
-    content_url = models.CharField(max_length=200)
-    read_count = models.IntegerField()
-    collect_count = models.IntegerField()
-    share_count = models.IntegerField()
-    create_time = models.DateTimeField()
-    category = models.IntegerField()
-
-class ArticleCulture(models.Model):
-    """
-    文化
     """
     organization = models.ForeignKey(Organization)
     author_name = models.CharField(max_length=100)

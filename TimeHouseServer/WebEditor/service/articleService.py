@@ -1,6 +1,6 @@
 __author__ = '祥祥'
 
-from Background.models import ArticleJoke, ArticlePhoto, ArticleCulture, ArticleForeign, ArticleHistory, ArticleHuman, ArticleLiterature, ArticleDeep, ArticlePhilosophy, TextAndImage
+from Background.models import ArticleJoke, ArticlePhoto, ArticleForeign, ArticleHuman, ArticleDeep, TextAndImage
 from Background.service.service_article import Articles, Categorys
 from WebEditor.constant import constant
 
