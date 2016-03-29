@@ -84,7 +84,7 @@ def getArticlesByOrgId(userId, orgId, articles):
     :param articles:
     :return:
     """
-    for i in range(0,len(Articles)):
+    for i in range(1,len(Articles)):
         CurrentArticle = Articles[i]
         tblArticles = CurrentArticle.objects.filter(organization_id=orgId).order_by('create_time')
         getArticlesFromTblArticles(tblArticles, articles)
