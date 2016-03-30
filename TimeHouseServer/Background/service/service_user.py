@@ -139,4 +139,5 @@ def getMyCollects(userId, articles):
         c.collectTime = dataToStr(tblCollect.collect_time)
         c.articleType = tblCollect.article_type
         c.articleId = tblCollect.article_id
-    pass
+
+    return True
