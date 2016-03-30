@@ -6,7 +6,7 @@ from Background import util
 from WebEditor.constant import constant
 
 from Background.protocol import reader_pb2
-from Background.service.service_article import Articles
+from Background.constant import Articles
 
 def verifyUserKey(request):
     """

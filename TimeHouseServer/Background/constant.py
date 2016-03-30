@@ -3,6 +3,14 @@ __author__ = '祥祥'
 # 数据库查询的分页数量
 LIMIT = 20
 
+from Background.models import  ArticleForeign, ArticleHuman, ArticleJoke, ArticleDeep, ArticlePhoto
+
+Articles = [ArticleDeep    # 默认使用news
+            , ArticleDeep
+            , ArticlePhoto
+            , ArticleHuman
+            , ArticleJoke
+            , ArticleForeign]
 
 def getToken():
     """

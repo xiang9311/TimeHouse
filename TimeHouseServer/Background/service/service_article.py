@@ -7,6 +7,7 @@ from Background import constant
 from Background.protocol import common_pb2
 from Background import util
 from . import service_user
+from Background.constant import Articles
 
 # enum Category {
 #   MAIN = 0;          // 首页
@@ -21,12 +22,12 @@ from . import service_user
 #   JOKE = 9;          // 笑话
 # }
 
-Articles = [ArticleDeep    # 默认使用news
-            , ArticleDeep
-            , ArticlePhoto
-            , ArticleHuman
-            , ArticleJoke
-            , ArticleForeign]
+# Articles = [ArticleDeep    # 默认使用news
+#             , ArticleDeep
+#             , ArticlePhoto
+#             , ArticleHuman
+#             , ArticleJoke
+#             , ArticleForeign]
 
 Categorys = ['error'
              , '深度'
