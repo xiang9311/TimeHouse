@@ -7,7 +7,7 @@ from .service import service_article, service_user
 
 from .protocol import common_pb2
 from .protocol import reader_pb2, pilot_pb2
-
+from TimeHouseServer import logger
 from . import constant
 import time
 
@@ -77,7 +77,6 @@ def getArticles(request):
         # return HttpResponse(str(response10001))
     except Exception as error:
 
-        from TimeHouseServer import logger
         logger.info(str(error))
 
         response10001 = reader_pb2.Response10001()
@@ -127,7 +126,6 @@ def collectArticles(request):
             return HttpResponse(response_pro.SerializeToString())
     except Exception as error:
 
-        from TimeHouseServer import logger
         logger.info(str(error))
 
         response_pro = reader_pb2.Response10003()
@@ -147,10 +145,13 @@ def getDetailArticles(request):
     request_pro = reader_pb2.Request10004()
     try:
         request_pro.MergeFromString(request.read())
+
     except:
         pass
     request_common = request_pro.common
     params = request_pro.params
+
+    logger.info(str(params))
 
     try:
         response_pro = reader_pb2.Response10004()
@@ -175,7 +176,7 @@ def getDetailArticles(request):
         response_common = response_pro.common
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
 
-        from TimeHouseServer import logger
+
         logger.info(str(error))
 
         return HttpResponse(response_pro.SerializeToString())
@@ -231,7 +232,6 @@ def register(request):
             return HttpResponse(response_pro.SerializeToString())
     except Exception as error:
 
-        from TimeHouseServer import logger
         logger.info(str(error))
 
         response_pro = pilot_pb2.Response11002()
@@ -278,7 +278,6 @@ def login(request):
         response_common = response_pro.common
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
 
-        from TimeHouseServer import logger
         logger.info(str(error))
 
         return HttpResponse(response_pro.SerializeToString())
@@ -323,7 +322,6 @@ def getMyCollection(request):
         response_common = response_pro.common
         initCommonErrorResponse(cmdId, request_common.userid, response_common)
 
-        from TimeHouseServer import logger
         logger.info(str(error))
 
         return HttpResponse(response_pro.SerializeToString())
