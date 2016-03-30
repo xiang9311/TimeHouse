@@ -139,7 +139,7 @@ class Collect(models.Model):
     """
     user_id = models.IntegerField()
     article_id = models.IntegerField()
-    collect_type = models.IntegerField()                   # 收藏的分类
+    collect_type = models.IntegerField()                   # 收藏的分类, deep joke等
     article_type = models.IntegerField()                   # 文章跳转的分类 web 普通文章 图
     organization_id = models.IntegerField()                # 组织id
     article_title = models.CharField(max_length=300)       # 文章标题
