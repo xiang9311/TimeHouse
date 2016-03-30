@@ -7,6 +7,7 @@ urlpatterns = [
     # getArticles
     url(r'^articles/getArticles$', views.getArticles),
     url(r'^articles/collectArticles$', views.collectArticles),
+    url(r'^articles/getDetailArticles$', views.getDetailArticles),
 
     # pilot
 

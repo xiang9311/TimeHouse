@@ -164,3 +164,16 @@ def getArticleFromTblArticle(tblArticle, article):
 
 def getCategory(category):
     return CategoryForProto[category]
+
+def getArticleDetail(articleId, category, article):
+    """
+    通过分类和id获取proto中的Article对象
+    :param articleId:
+    :param category:
+    :param article:
+    :return:
+    """
+    CurrentArticle = Articles[category]
+    tblArticle = CurrentArticle.objects.get(id=articleId)
+    getArticleFromTblArticle(tblArticle, article)
+    return True
