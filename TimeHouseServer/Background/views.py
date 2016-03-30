@@ -251,6 +251,42 @@ def getMyCollection(request):
     :param request:
     :return:
     """
+    cmdId = 11004
+    request_pro = pilot_pb2.Request11004()
+    try:
+        request_pro.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_pro.common
+    params = request_pro.params
+
+    try:
+        response_pro = pilot_pb2.Response11004()
+
+        response_common = response_pro.common
+        data = response_pro.data
+
+        user_id = request_common.userid
+
+        articles = data.articles
+
+        if service_user.getMyCollects(user_id, articles):
+            initCommonResponse(0, "success", cmdId, request_common.userid, response_common)
+
+        else:
+            initCommonResponse(105, "获取失败", cmdId, request_common.userid, response_common)
+            pass
+        return HttpResponse(response_pro.SerializeToString())
+
+    except Exception as error:
+        response_pro = pilot_pb2.Response11004()
+        response_common = response_pro.common
+        initCommonErrorResponse(cmdId, request_common.userid, response_common)
+
+        from TimeHouseServer import logger
+        logger.info(str(error))
+
+        return HttpResponse(response_pro.SerializeToString())
     pass
 
 @csrf_exempt

@@ -6,6 +6,7 @@ from Background import util
 from WebEditor.constant import constant
 
 from Background.protocol import reader_pb2
+from Background.service.service_article import Articles
 
 def verifyUserKey(request):
     """
@@ -15,11 +16,9 @@ def verifyUserKey(request):
     """
     pass
 
-
-
 def getOrganizeById(userId, organize):
     """
-    通过用户的id获取proto中的组织对象
+    通过用户的id获取proto中的Organization对象
     :param userId:
     :return:
     """
@@ -32,7 +31,7 @@ def getOrganizeById(userId, organize):
 
 def getOrganizeDetailById(userId, organize):
     """
-    通过id获取组织详情
+    通过id获取组织详情中的组织相关信息
     :param userId:
     :param organize:
     :return:
@@ -94,6 +93,8 @@ def login(userName, pw, data):
 
 def collect(userId, articleId, category, optionType):
 
+    article = Articles[category].objects.get(id=articleId)
+
     if optionType == reader_pb2.Request10003.COLLECT:
 
         collects = Collect.objects.filter(user_id=userId,article_id=articleId,collect_type=category)
@@ -103,6 +104,9 @@ def collect(userId, articleId, category, optionType):
             mCollect.user_id = userId
             mCollect.collect_type = int(category)
             mCollect.collect_time = constant.getDatabaseTimeNow()
+            mCollect.organization_id = article.organization_id
+            mCollect.article_title = article.title
+            mCollect.article_type = article.article_type
             mCollect.save()
         else:
             return True
@@ -112,3 +116,25 @@ def collect(userId, articleId, category, optionType):
         for c in mCollect:
             c.delete()
     return True
+
+def getMyCollects(userId, articles):
+    """
+    获取我的收藏
+    :param userId: 我的id
+    :param articles: 我的收藏
+    :return:
+    """
+
+    dataToStr = util.TimeUtil(util.DEFAULT_TIME_FORMAT)
+
+    tblCollects = Collect.objects.filter(user_id=userId)
+    for tblCollect in tblCollects:
+        c = articles.add()
+        organization = c.organize
+        c.id = tblCollect.id
+        c.organize = getOrganizeById(tblCollect.organization_id, organization)
+        c.title = tblCollect.article_title
+        c.collectTime = dataToStr(tblCollect.collect_time)
+        c.articleType = tblCollect.article_type
+        c.articleId = tblCollect.article_id
+    pass
