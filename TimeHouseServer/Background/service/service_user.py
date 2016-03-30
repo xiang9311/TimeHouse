@@ -95,6 +95,9 @@ def collect(userId, articleId, category, optionType):
 
     article = Articles[category].objects.get(id=articleId)
 
+    if not article:
+        return False
+
     if optionType == reader_pb2.Request10003.COLLECT:
 
         collects = Collect.objects.filter(user_id=userId,article_id=articleId,collect_type=category)

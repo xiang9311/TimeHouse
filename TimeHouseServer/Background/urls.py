@@ -12,6 +12,7 @@ urlpatterns = [
 
     # getUserDetail
     url(r'^pilot/getUserDetail$', views.getUserDetail),
+    url(r'^pilot/getMyCollection$', views.getMyCollection),            # 获取我的收藏
 
     # 获取七牛token
     url(r'^pilot/getQiniuToken$', views.getQiniuToken),
