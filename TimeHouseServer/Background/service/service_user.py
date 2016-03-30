@@ -133,9 +133,8 @@ def getMyCollects(userId, articles):
     tblCollects = Collect.objects.filter(user_id=userId)
     for tblCollect in tblCollects:
         c = articles.add()
-        organization = c.organize
         c.id = tblCollect.id
-        c.organize = getOrganizeById(tblCollect.organization_id, organization)
+        getOrganizeById(tblCollect.organization_id, c.organize)
         c.title = tblCollect.article_title
         c.collectTime = dataToStr(tblCollect.collect_time)
         c.articleType = tblCollect.article_type
