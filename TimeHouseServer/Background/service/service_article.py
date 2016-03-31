@@ -185,4 +185,4 @@ def searchArticles(keyword, pageIndex, articles):
         # .order_by('create_time') 不需要排序吧。。
         tblArticles = CurrentArticle.objects.filter(title__contains=keyword)[limit_every * pageIndex : limit_every * (pageIndex + 1)]
         getArticlesFromTblArticles(tblArticles, articles)
-    pass
+    return True

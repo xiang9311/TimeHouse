@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46187365" vertical-offset="1859" max-vertical-offset="8455">
-              <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1973" max-vertical-offset="8455">
+              <caret line="114" column="35" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3202" max-vertical-offset="3667">
-              <caret line="184" column="40" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.61659193" vertical-offset="3164" max-vertical-offset="3667">
+              <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
               <folding>
                 <element signature="e#19#132#0" expanded="true" />
               </folding>
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/Background/models.py" />
         <option value="$PROJECT_DIR$/Background/service/service_user.py" />
         <option value="$PROJECT_DIR$/Background/urls.py" />
-        <option value="$PROJECT_DIR$/Background/service/service_article.py" />
         <option value="$PROJECT_DIR$/Background/views.py" />
+        <option value="$PROJECT_DIR$/Background/service/service_article.py" />
       </list>
     </option>
   </component>
@@ -1072,22 +1072,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
+    <entry file="file://$PROJECT_DIR$/Background/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3202" max-vertical-offset="3667">
-          <caret line="184" column="40" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1973" max-vertical-offset="8455">
+          <caret line="114" column="35" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
           <folding>
-            <element signature="e#19#132#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/views.py">
+    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46187365" vertical-offset="1859" max-vertical-offset="8455">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.61659193" vertical-offset="3164" max-vertical-offset="3667">
+          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#19#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
