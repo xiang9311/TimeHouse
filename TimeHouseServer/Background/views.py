@@ -91,6 +91,41 @@ def searchArticles(request):
     :param request:
     :return:
     """
+    cmdId = 10002
+    request_pro = reader_pb2.Request10002()
+    try:
+        request_pro.MergeFromString(request.read())
+    except:
+        pass
+    request_common = request_pro.common
+    params = request_pro.params
+
+    try:
+        response_pro = reader_pb2.Response10002()
+
+        response_common = response_pro.common
+        data = response_pro.data
+
+        articles = data.articles
+        articles.maxCount = constant.LIMIT
+
+        keyword = params.keyword  # 搜索的关键字
+        index = params.index      # 分页的第几页
+
+        if service_article.searchArticles(keyword, index, articles):
+            initCommonResponse(0, 'success', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+        else:
+            initCommonResponse(103, '操作失败', cmdId, request_common.userid, response_common)
+            return HttpResponse(response_pro.SerializeToString())
+    except Exception as error:
+
+        logger.info(str(error))
+
+        response_pro = reader_pb2.Response10003()
+        response_common = response_pro.common
+        initCommonErrorResponse(cmdId, request_common.userid, response_common)
+        return HttpResponse(response_pro.SerializeToString())
     pass
 
 @csrf_exempt

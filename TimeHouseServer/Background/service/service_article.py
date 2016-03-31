@@ -177,3 +177,12 @@ def getArticleDetail(articleId, category, article):
     tblArticle = CurrentArticle.objects.get(id=articleId)
     getArticleFromTblArticle(tblArticle, article)
     return True
+
+def searchArticles(keyword, pageIndex, articles):
+    limit_every = constant.LIMIT / 5
+    for i in range(1,6):
+        CurrentArticle = Articles[i]
+        # .order_by('create_time') 不需要排序吧。。
+        tblArticles = CurrentArticle.objects.filter(title__contains=keyword)[limit_every * pageIndex : limit_every * (pageIndex + 1)]
+        getArticlesFromTblArticles(tblArticles, articles)
+    pass
