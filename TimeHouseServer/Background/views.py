@@ -107,7 +107,7 @@ def searchArticles(request):
         data = response_pro.data
 
         articles = data.articles
-        articles.maxCount = constant.LIMIT
+        data.maxCount = constant.LIMIT
 
         keyword = params.keyword  # 搜索的关键字
         index = params.index      # 分页的第几页
