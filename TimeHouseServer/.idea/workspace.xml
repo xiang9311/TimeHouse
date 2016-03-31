@@ -43,14 +43,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61659193" vertical-offset="3164" max-vertical-offset="3667">
-              <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3164" max-vertical-offset="3667">
+              <caret line="175" column="39" selection-start-line="175" selection-start-column="39" selection-end-line="175" selection-end-column="39" />
               <folding>
                 <element signature="e#19#132#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2280" max-vertical-offset="10336">
+              <caret line="147" column="35" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,8 +88,8 @@
       <file leaf-file-name="service_user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/service/service_user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2850">
-              <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2850">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="e#19#76#0" expanded="true" />
               </folding>
@@ -87,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="articleService.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebEditor/service/articleService.py">
+      <file leaf-file-name="imageEditor.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/imageEditor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="2299">
-              <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.4832536" vertical-offset="2306" max-vertical-offset="4370">
+              <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -130,7 +140,6 @@
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/userDetail.html" />
         <option value="$PROJECT_DIR$/WebEditor/urls.py" />
         <option value="$PROJECT_DIR$/WebEditor/views.py" />
-        <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/imageEditor.html" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/register.html" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/textEditor.html" />
         <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html" />
@@ -145,6 +154,7 @@
         <option value="$PROJECT_DIR$/Background/urls.py" />
         <option value="$PROJECT_DIR$/Background/views.py" />
         <option value="$PROJECT_DIR$/Background/service/service_article.py" />
+        <option value="$PROJECT_DIR$/WebEditor/templates/WebEditor/imageEditor.html" />
       </list>
     </option>
   </component>
@@ -205,6 +215,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TimeHouseServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TimeHouseServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TimeHouseServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -342,7 +374,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="mode&#9;FILE&#9;file://D:/MyWork/TimeHouse/TimeHouseServer/Background/models.py&#10;models&#9;FILE&#9;file://D:/MyWork/TimeHouse/TimeHouseServer/Background/models.py&#10;python&#9;FILE&#9;file://D:/Program Files (x86)/python/Lib/site-packages/google/protobuf/internal/python_message.py&#10;python_message&#9;FILE&#9;file://D:/Program Files (x86)/python/Lib/site-packages/google/protobuf/internal/python_message.py" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://D:/MyWork/TimeHouse/TimeHouseServer/WebEditor/templates/WebEditor/webEditor.html&#10;mode&#9;FILE&#9;file://D:/MyWork/TimeHouse/TimeHouseServer/Background/models.py&#10;models&#9;FILE&#9;file://D:/MyWork/TimeHouse/TimeHouseServer/Background/models.py&#10;python&#9;FILE&#9;file://D:/Program Files (x86)/python/Lib/site-packages/google/protobuf/internal/python_message.py&#10;python_message&#9;FILE&#9;file://D:/Program Files (x86)/python/Lib/site-packages/google/protobuf/internal/python_message.py" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -653,7 +685,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2632375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2632375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24836601" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -906,13 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/imageEditor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18302387" vertical-offset="881" max-vertical-offset="4370">
-          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebEditor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50442475" vertical-offset="0" max-vertical-offset="646">
@@ -924,13 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="2033" max-vertical-offset="3667">
           <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="6726">
-          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -946,13 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3318584" vertical-offset="3042" max-vertical-offset="7353">
           <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0857143" vertical-offset="1482" max-vertical-offset="10336">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -989,6 +1000,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5522042" vertical-offset="2137" max-vertical-offset="2584">
           <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,24 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebEditor/service/articleService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="2299">
-          <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Background/service/service_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2850">
-          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
-          <folding>
-            <element signature="e#19#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Background/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="551">
@@ -1084,11 +1078,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61659193" vertical-offset="3164" max-vertical-offset="3667">
-          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3164" max-vertical-offset="3667">
+          <caret line="175" column="39" selection-start-line="175" selection-start-column="39" selection-end-line="175" selection-end-column="39" />
           <folding>
             <element signature="e#19#132#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2280" max-vertical-offset="10336">
+          <caret line="147" column="35" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/service/articleService.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67264575" vertical-offset="308" max-vertical-offset="2299">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="e#19#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/webEditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="6726">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Background/service/service_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2850">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEditor/templates/WebEditor/imageEditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4832536" vertical-offset="2306" max-vertical-offset="4370">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
