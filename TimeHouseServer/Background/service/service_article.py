@@ -93,7 +93,7 @@ def getArticles(userId, category, index, articles):
         getArticlesFromDictArticles(row, articles)
     else:
         CurrentArticle = Articles[category]
-        tblArticles = CurrentArticle.objects.order_by('create_time')[constant.LIMIT * index : constant.LIMIT * (index + 1)]
+        tblArticles = CurrentArticle.objects.order_by('create_time').reverse()[constant.LIMIT * index : constant.LIMIT * (index + 1)]
         getArticlesFromTblArticles(tblArticles, articles)
 
 
@@ -107,7 +107,7 @@ def getArticlesByOrgId(userId, orgId, articles):
     """
     for i in range(1,len(Articles)):
         CurrentArticle = Articles[i]
-        tblArticles = CurrentArticle.objects.filter(organization_id=orgId).order_by('create_time')
+        tblArticles = CurrentArticle.objects.filter(organization_id=orgId).reverse().order_by('create_time')
         getArticlesFromTblArticles(tblArticles, articles)
     pass
 
