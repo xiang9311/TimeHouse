@@ -46,19 +46,19 @@
       <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84177214" vertical-offset="1311" max-vertical-offset="5111">
-              <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.48101267" vertical-offset="1406" max-vertical-offset="5092">
+              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
               <folding>
                 <element signature="e#19#132#0" expanded="true" />
-                <marker date="1459844147279" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
-                <marker date="1459844147279" expanded="true" signature="2327:2640" placeholder="SELECT * FRO..." />
-                <marker date="1459844147279" expanded="true" signature="2327:2641" placeholder="SELECT * FRO..." />
-                <marker date="1459844147279" expanded="true" signature="2327:2644" placeholder="SELECT * FRO..." />
-                <marker date="1459844147279" expanded="true" signature="2327:3277" placeholder="SELECT * FRO..." />
-                <marker date="1459844147279" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
-                <marker date="1459844147279" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
-                <marker date="1459844147279" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
-                <marker date="1459844147279" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
+                <marker date="1459844770841" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
+                <marker date="1459844770841" expanded="true" signature="2327:2644" placeholder="SELECT * FRO..." />
+                <marker date="1459844770841" expanded="true" signature="2327:2645" placeholder="SELECT * FRO..." />
+                <marker date="1459844770841" expanded="true" signature="2327:2648" placeholder="SELECT * FRO..." />
+                <marker date="1459844770841" expanded="true" signature="2327:3281" placeholder="SELECT * FRO..." />
+                <marker date="1459844770841" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
+                <marker date="1459844770841" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
+                <marker date="1459844770841" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
+                <marker date="1459844770841" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
               </folding>
             </state>
           </provider>
@@ -1081,19 +1081,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84177214" vertical-offset="1311" max-vertical-offset="5111">
-          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.48101267" vertical-offset="1406" max-vertical-offset="5092">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding>
             <element signature="e#19#132#0" expanded="true" />
-            <marker date="1459844147279" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
-            <marker date="1459844147279" expanded="true" signature="2327:2640" placeholder="SELECT * FRO..." />
-            <marker date="1459844147279" expanded="true" signature="2327:2641" placeholder="SELECT * FRO..." />
-            <marker date="1459844147279" expanded="true" signature="2327:2644" placeholder="SELECT * FRO..." />
-            <marker date="1459844147279" expanded="true" signature="2327:3277" placeholder="SELECT * FRO..." />
-            <marker date="1459844147279" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
-            <marker date="1459844147279" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
-            <marker date="1459844147279" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
-            <marker date="1459844147279" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
+            <marker date="1459844770841" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
+            <marker date="1459844770841" expanded="true" signature="2327:2644" placeholder="SELECT * FRO..." />
+            <marker date="1459844770841" expanded="true" signature="2327:2645" placeholder="SELECT * FRO..." />
+            <marker date="1459844770841" expanded="true" signature="2327:2648" placeholder="SELECT * FRO..." />
+            <marker date="1459844770841" expanded="true" signature="2327:3281" placeholder="SELECT * FRO..." />
+            <marker date="1459844770841" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
+            <marker date="1459844770841" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
+            <marker date="1459844770841" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
+            <marker date="1459844770841" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
           </folding>
         </state>
       </provider>

@@ -84,8 +84,7 @@ def getArticles(userId, category, index, articles):
             UNION SELECT * FROM Background_articlehuman
             UNION SELECT * FROM Background_articlejoke
             UNION SELECT * FROM Background_articlephoto
-
-            ORDER BY create_time
+            ORDER BY create_time DESC
             LIMIT %s,%s""", [constant.LIMIT * index, constant.LIMIT * (index + 1)])
         row = dictfetchall(cursor)
         # for i in range(1,6):
