@@ -91,7 +91,7 @@ def getArticles(userId, category, index, articles):
         # for i in range(1,6):
         #     CurrentArticle = Articles[i]
         #     tblArticles = CurrentArticle.objects.order_by('create_time')[limit_every * index : limit_every * (index + 1)]
-        getArticlesFromTblArticles(row, articles)
+        getArticlesFromDictArticles(row, articles)
     else:
         CurrentArticle = Articles[category]
         tblArticles = CurrentArticle.objects.order_by('create_time')[constant.LIMIT * index : constant.LIMIT * (index + 1)]
@@ -143,6 +143,58 @@ def getArticlesFromTblArticles(tblArticles, articles):
         getArticleFromTblArticle(tblArticle, article)
 
     return articles
+
+
+def getArticlesFromDictArticles(tblArticles, articles):
+    """
+    把数据库中的article转化为proto的article
+    :param tblArticles:
+    :return:
+    """
+    for tblArticle in tblArticles:
+        article = articles.add()
+        getArticleFromDictArticle(tblArticle, article)
+
+    return articles
+
+def getArticleFromDictArticle(tblArticle, article):
+    """
+    把表中的article转化为proto的article
+    :param tblArticle:
+    :return:
+    """
+    date2str = util.TimeUtil(util.DEFAULT_TIME_FORMAT)
+
+    article.id = tblArticle['id']
+    article.readCount = tblArticle['read_count']
+    article.shareCount = tblArticle['share_count']
+    article.authorName = tblArticle['author_name']
+    article.contentType = tblArticle['content_type']
+    article.articleType = tblArticle['article_type']
+    article.title = tblArticle['title']
+    article.subContent = tblArticle['sub_content']
+    article.content = tblArticle['content']
+    article.category = getCategory(tblArticle['category'])
+    # article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
+    # 如果是显示大图，则返回完整图
+    if tblArticle['content_type'] == common_pb2.BIG_IMAGE:
+        article.coverUrl = util.getImageUrl(tblArticle['cover_url'])
+    else:
+        article.coverUrl = util.getImageUrl200_200(tblArticle['cover_url'])
+
+    article.url = tblArticle['content_url']
+    article.createTime = date2str(tblArticle['create_time'])
+
+    if tblArticle['article_type'] == 3:
+        # 图文类型 3
+        getImageAndTexts(tblArticle['id'], article.imageAndTexts)
+    else:
+        pass
+
+    service_user.getOrganizeById(tblArticle['organization_id'], article.organize)
+
+    return article
+
 
 
 def getArticleFromTblArticle(tblArticle, article):
