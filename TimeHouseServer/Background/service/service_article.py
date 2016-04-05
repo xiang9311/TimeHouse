@@ -154,7 +154,7 @@ def getArticleFromTblArticle(tblArticle, article):
     date2str = util.TimeUtil(util.DEFAULT_TIME_FORMAT)
 
     from TimeHouseServer.logger import info
-    info(str(article))
+    info(str(tblArticle))
 
     article.id = tblArticle.id
     article.readCount = tblArticle.read_count
