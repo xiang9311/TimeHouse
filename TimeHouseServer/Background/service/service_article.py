@@ -65,6 +65,15 @@ def getArticles(userId, category, index, articles):
     :param index: 第几页
     :return: 包含Article的列表
     """
+
+    def dictfetchall(cursor):
+        "Returns all rows from a cursor as a dict"
+        desc = cursor.description
+        return [
+            dict(zip([col[0] for col in desc], row))
+            for row in cursor.fetchall()
+        ]
+
     if category == common_pb2.MAIN:
         # 综合返回内容
         # 目前首页返回前五个分类
@@ -78,7 +87,7 @@ def getArticles(userId, category, index, articles):
 
             ORDER BY create_time
             LIMIT %s""", constant.LIMIT)
-        row = cursor.fetchone()
+        row = dictfetchall(cursor)
         # for i in range(1,6):
         #     CurrentArticle = Articles[i]
         #     tblArticles = CurrentArticle.objects.order_by('create_time')[limit_every * index : limit_every * (index + 1)]

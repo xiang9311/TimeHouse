@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Background/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5675676" vertical-offset="1118" max-vertical-offset="8455">
-              <caret line="71" column="76" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="8455">
+              <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -43,21 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="service_article.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="3895">
-              <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.54751134" vertical-offset="1430" max-vertical-offset="4066">
+              <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
               <folding>
                 <element signature="e#19#132#0" expanded="true" />
-                <marker date="1459842523010" expanded="true" signature="2089:2125" placeholder="SELECT * FRO..Background_articledeep..." />
-                <marker date="1459842523010" expanded="true" signature="2089:2402" placeholder="SELECT * FRO..." />
-                <marker date="1459842523010" expanded="true" signature="2089:2403" placeholder="SELECT * FRO..." />
-                <marker date="1459842523010" expanded="true" signature="2089:2992" placeholder="SELECT * FRO..." />
-                <marker date="1459842523010" expanded="true" signature="2144:2183" placeholder="SELECT * FRO..Background_articleforeign..." />
-                <marker date="1459842523010" expanded="true" signature="2202:2239" placeholder="SELECT * FRO..Background_articlehuman..." />
-                <marker date="1459842523010" expanded="true" signature="2258:2294" placeholder="SELECT * FRO..Background_articlejoke..." />
-                <marker date="1459842523010" expanded="true" signature="2313:2350" placeholder="SELECT * FRO..Background_articlephoto..." />
+                <marker date="1459843014537" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
+                <marker date="1459843014537" expanded="true" signature="2327:2640" placeholder="SELECT * FRO..." />
+                <marker date="1459843014537" expanded="true" signature="2327:2641" placeholder="SELECT * FRO..." />
+                <marker date="1459843014537" expanded="true" signature="2327:3233" placeholder="SELECT * FRO..." />
+                <marker date="1459843014537" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
+                <marker date="1459843014537" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
+                <marker date="1459843014537" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
+                <marker date="1459843014537" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
               </folding>
             </state>
           </provider>
@@ -643,7 +643,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -655,7 +655,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2875817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20915033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1066,30 +1066,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
+    <entry file="file://$PROJECT_DIR$/Background/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="3895">
-          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="8455">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
           <folding>
-            <element signature="e#19#132#0" expanded="true" />
-            <marker date="1459842523010" expanded="true" signature="2089:2125" placeholder="SELECT * FRO..Background_articledeep..." />
-            <marker date="1459842523010" expanded="true" signature="2089:2402" placeholder="SELECT * FRO..." />
-            <marker date="1459842523010" expanded="true" signature="2089:2403" placeholder="SELECT * FRO..." />
-            <marker date="1459842523010" expanded="true" signature="2089:2992" placeholder="SELECT * FRO..." />
-            <marker date="1459842523010" expanded="true" signature="2144:2183" placeholder="SELECT * FRO..Background_articleforeign..." />
-            <marker date="1459842523010" expanded="true" signature="2202:2239" placeholder="SELECT * FRO..Background_articlehuman..." />
-            <marker date="1459842523010" expanded="true" signature="2258:2294" placeholder="SELECT * FRO..Background_articlejoke..." />
-            <marker date="1459842523010" expanded="true" signature="2313:2350" placeholder="SELECT * FRO..Background_articlephoto..." />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Background/views.py">
+    <entry file="file://$PROJECT_DIR$/Background/service/service_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5675676" vertical-offset="1118" max-vertical-offset="8455">
-          <caret line="71" column="76" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.54751134" vertical-offset="1430" max-vertical-offset="4066">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#19#132#0" expanded="true" />
+            <marker date="1459843014537" expanded="true" signature="2327:2363" placeholder="SELECT * FRO..Background_articledeep..." />
+            <marker date="1459843014537" expanded="true" signature="2327:2640" placeholder="SELECT * FRO..." />
+            <marker date="1459843014537" expanded="true" signature="2327:2641" placeholder="SELECT * FRO..." />
+            <marker date="1459843014537" expanded="true" signature="2327:3233" placeholder="SELECT * FRO..." />
+            <marker date="1459843014537" expanded="true" signature="2382:2421" placeholder="SELECT * FRO..Background_articleforeign..." />
+            <marker date="1459843014537" expanded="true" signature="2440:2477" placeholder="SELECT * FRO..Background_articlehuman..." />
+            <marker date="1459843014537" expanded="true" signature="2496:2532" placeholder="SELECT * FRO..Background_articlejoke..." />
+            <marker date="1459843014537" expanded="true" signature="2551:2588" placeholder="SELECT * FRO..Background_articlephoto..." />
           </folding>
         </state>
       </provider>
