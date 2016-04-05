@@ -86,7 +86,7 @@ def getArticles(userId, category, index, articles):
             UNION SELECT * FROM Background_articlephoto
 
             ORDER BY create_time
-            LIMIT %s""", constant.LIMIT)
+            LIMIT %s,%s""", [constant.LIMIT * index, constant.LIMIT * (index + 1)])
         row = dictfetchall(cursor)
         # for i in range(1,6):
         #     CurrentArticle = Articles[i]
