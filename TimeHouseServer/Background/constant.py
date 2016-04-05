@@ -1,7 +1,7 @@
 __author__ = '祥祥'
 
 # 数据库查询的分页数量
-LIMIT = 20
+LIMIT = 5
 
 from Background.models import  ArticleForeign, ArticleHuman, ArticleJoke, ArticleDeep, ArticlePhoto
 

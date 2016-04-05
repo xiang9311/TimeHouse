@@ -9,6 +9,8 @@ from Background import util
 from . import service_user
 from Background.constant import Articles
 
+from django.db import connection
+
 # enum Category {
 #   MAIN = 0;          // 首页
 #   NEWS = 1;          // 时事
@@ -67,10 +69,20 @@ def getArticles(userId, category, index, articles):
         # 综合返回内容
         # 目前首页返回前五个分类
         limit_every = constant.LIMIT / 5
-        for i in range(1,6):
-            CurrentArticle = Articles[i]
-            tblArticles = CurrentArticle.objects.order_by('create_time')[limit_every * index : limit_every * (index + 1)]
-            getArticlesFromTblArticles(tblArticles, articles)
+        cursor = connection.cursor()
+        cursor.execute("""SELECT * FROM Background_articledeep
+            UNION SELECT * FROM Background_articleforeign
+            UNION SELECT * FROM Background_articlehuman
+            UNION SELECT * FROM Background_articlejoke
+            UNION SELECT * FROM Background_articlephoto
+
+            ORDER BY create_time
+            LIMIT %s""", constant.LIMIT)
+        row = cursor.fetchone()
+        # for i in range(1,6):
+        #     CurrentArticle = Articles[i]
+        #     tblArticles = CurrentArticle.objects.order_by('create_time')[limit_every * index : limit_every * (index + 1)]
+        getArticlesFromTblArticles(row, articles)
     else:
         CurrentArticle = Articles[category]
         tblArticles = CurrentArticle.objects.order_by('create_time')[constant.LIMIT * index : constant.LIMIT * (index + 1)]
