@@ -112,8 +112,8 @@ def GetUeditorSettings(key,default=None):
 
 AK = '7XCCETRyC5OEr0PMAJYmAC9UK6cqnrOgKW59tahN'
 SK = '5kmqSnTVs4O_nLbDzA4YjIuirJxoGNExqHX1AF8f'
-bucket_name = 'weclub'
-BUCKEY_DOMAIN = 'http://7xo9gq.com2.z0.glb.qiniucdn.com'
+bucket_name = 'readplus'
+BUCKEY_DOMAIN = 'http://7xso8w.com2.z0.glb.qiniucdn.com'
 
 from qiniu import Auth
 q = Auth(AK, SK)
