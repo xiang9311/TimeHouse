@@ -193,7 +193,7 @@ def count(request):
         category = params.category
         optionType = params.optionType
 
-        if service_user.collect(request_common.userid, articleId, category, optionType):
+        if service_article.count(request_common.userid, articleId, category, optionType):
             initCommonResponse(0, 'success', cmdId, request_common.userid, response_common)
             return HttpResponse(response_pro.SerializeToString())
         else:
