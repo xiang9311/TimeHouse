@@ -111,13 +111,22 @@ def collect(userId, articleId, category, optionType):
             mCollect.article_title = article.title
             mCollect.article_type = article.article_type
             mCollect.save()
+            article.collect_count = article.collect_count + 1
+            article.save()
         else:
             return True
     else:
         # 取消收藏
         mCollect = Collect.objects.filter(article_id=articleId, user_id=userId, collect_type=int(category))
+        deleted = False
         for c in mCollect:
             c.delete()
+            if not deleted:
+                article.collect_count = article.collect_count - 1
+                if article.collect_count < 0:
+                    article.collect_count = 0
+                article.save()
+                deleted = True
     return True
 
 
