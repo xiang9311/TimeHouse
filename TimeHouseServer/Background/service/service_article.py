@@ -176,7 +176,7 @@ def getArticleFromDictArticle(tblArticle, article):
     article.category = getCategory(tblArticle['category'])
     # article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
     # 如果是显示大图，则返回完整图
-    if tblArticle['content_type'] == common_pb2.BIG_IMAGE:
+    if tblArticle['content_type'] == common_pb2.BIG_IMAGE or tblArticle['article_type'] == 2: # 普通文章需要cover
         article.coverUrl = util.getImageUrl(tblArticle['cover_url'])
     else:
         article.coverUrl = util.getImageUrl200_200(tblArticle['cover_url'])
@@ -219,7 +219,7 @@ def getArticleFromTblArticle(tblArticle, article):
     article.category = getCategory(tblArticle.category)
     # article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
     # 如果是显示大图，则返回完整图
-    if tblArticle.content_type == common_pb2.BIG_IMAGE:
+    if tblArticle.content_type == common_pb2.BIG_IMAGE or tblArticle.article_type == 2: # 普通文章需要cover:
         article.coverUrl = util.getImageUrl(tblArticle.cover_url)
     else:
         article.coverUrl = util.getImageUrl200_200(tblArticle.cover_url)
@@ -260,4 +260,30 @@ def searchArticles(keyword, pageIndex, articles):
         # .order_by('create_time') 不需要排序吧。。
         tblArticles = CurrentArticle.objects.filter(title__contains=keyword)[limit_every * pageIndex : limit_every * (pageIndex + 1)]
         getArticlesFromTblArticles(tblArticles, articles)
+    return True
+
+def count(articleId, category, optionType):
+    """
+    统计
+    :param articleId:
+    :param category:
+    :param optionType:
+    :return:
+    """
+    article = Articles[category].objects.get(id=articleId)
+
+    if not article:
+        return False
+
+    if optionType == 1: # 阅读量
+        article.read_count = article.read_count + 1
+        pass
+    elif optionType == 2: # 收藏
+        article.collect_count = article.collect_count + 1
+        pass
+    elif optionType == 3: # 分享
+        article.share_count = article.share_count + 1
+        pass
+
+    article.save()
     return True

@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='reader.proto',
   package='com.xiang.proto.reader',
   syntax='proto3',
-  serialized_pb=b'\n\x0creader.proto\x12\x16\x63om.xiang.proto.reader\x1a\x0c\x63ommon.proto\"\xc1\x01\n\x0cRequest10001\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10001.Params\x1a\x44\n\x06Params\x12+\n\x08\x63\x61tegory\x18\x01 \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\r\n\x05index\x18\x02 \x01(\x05\"\xc0\x01\n\rResponse10001\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10001.Data\x1a\x44\n\x04\x44\x61ta\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.com.xiang.proto.Article\x12\x10\n\x08maxCount\x18\x02 \x01(\x05\"\xa5\x01\n\x0cRequest10002\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10002.Params\x1a(\n\x06Params\x12\x0f\n\x07keyword\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\"\xc0\x01\n\rResponse10002\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10002.Data\x1a\x44\n\x04\x44\x61ta\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.com.xiang.proto.Article\x12\x10\n\x08maxCount\x18\x02 \x01(\x05\"\xb5\x02\n\x0cRequest10003\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10003.Params\x1a\x8d\x01\n\x06Params\x12\x11\n\tarticleId\x18\x01 \x01(\x05\x12+\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x43\n\noptionType\x18\x03 \x01(\x0e\x32/.com.xiang.proto.reader.Request10003.OptionType\"(\n\nOptionType\x12\x0b\n\x07\x43OLLECT\x10\x00\x12\r\n\tUNCOLLECT\x10\x01\"\x82\x01\n\rResponse10003\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10003.Data\x1a\x06\n\x04\x44\x61ta\"\xc5\x01\n\x0cRequest10004\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10004.Params\x1aH\n\x06Params\x12\x11\n\tarticleId\x18\x01 \x01(\x05\x12+\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x19.com.xiang.proto.Category\"\xad\x01\n\rResponse10004\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10004.Data\x1a\x31\n\x04\x44\x61ta\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.com.xiang.proto.Articleb\x06proto3'
+  serialized_pb=b'\n\x0creader.proto\x12\x16\x63om.xiang.proto.reader\x1a\x0c\x63ommon.proto\"\xc1\x01\n\x0cRequest10001\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10001.Params\x1a\x44\n\x06Params\x12+\n\x08\x63\x61tegory\x18\x01 \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\r\n\x05index\x18\x02 \x01(\x05\"\xc0\x01\n\rResponse10001\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10001.Data\x1a\x44\n\x04\x44\x61ta\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.com.xiang.proto.Article\x12\x10\n\x08maxCount\x18\x02 \x01(\x05\"\xa5\x01\n\x0cRequest10002\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10002.Params\x1a(\n\x06Params\x12\x0f\n\x07keyword\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\"\xc0\x01\n\rResponse10002\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10002.Data\x1a\x44\n\x04\x44\x61ta\x12*\n\x08\x61rticles\x18\x01 \x03(\x0b\x32\x18.com.xiang.proto.Article\x12\x10\n\x08maxCount\x18\x02 \x01(\x05\"\xb5\x02\n\x0cRequest10003\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10003.Params\x1a\x8d\x01\n\x06Params\x12\x11\n\tarticleId\x18\x01 \x01(\x05\x12+\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x43\n\noptionType\x18\x03 \x01(\x0e\x32/.com.xiang.proto.reader.Request10003.OptionType\"(\n\nOptionType\x12\x0b\n\x07\x43OLLECT\x10\x00\x12\r\n\tUNCOLLECT\x10\x01\"\x82\x01\n\rResponse10003\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10003.Data\x1a\x06\n\x04\x44\x61ta\"\xc5\x01\n\x0cRequest10004\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10004.Params\x1aH\n\x06Params\x12\x11\n\tarticleId\x18\x01 \x01(\x05\x12+\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x19.com.xiang.proto.Category\"\xad\x01\n\rResponse10004\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10004.Data\x1a\x31\n\x04\x44\x61ta\x12)\n\x07\x61rticle\x18\x01 \x01(\x0b\x32\x18.com.xiang.proto.Article\"\xa5\x01\n\x0cRequest10005\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10005.Params\x1a(\n\x06Params\x12\x0f\n\x07keyword\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\x05\"\xc1\x01\n\rResponse10005\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10005.Data\x1a\x45\n\x04\x44\x61ta\x12+\n\x08organiza\x18\x01 \x03(\x0b\x32\x19.com.xiang.proto.Organize\x12\x10\n\x08maxCount\x18\x02 \x01(\x05\"\xd9\x01\n\x0cRequest10006\x12.\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1e.com.xiang.proto.RequestCommon\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.com.xiang.proto.reader.Request10006.Params\x1a\\\n\x06Params\x12+\n\x08\x63\x61tegory\x18\x01 \x01(\x0e\x32\x19.com.xiang.proto.Category\x12\x11\n\tarticleId\x18\x02 \x01(\x05\x12\x12\n\noptionType\x18\x03 \x01(\x05\"\x82\x01\n\rResponse10006\x12/\n\x06\x63ommon\x18\x01 \x01(\x0b\x32\x1f.com.xiang.proto.ResponseCommon\x12\x38\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32*.com.xiang.proto.reader.Response10006.Data\x1a\x06\n\x04\x44\x61tab\x06proto3'
   ,
   dependencies=[common__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -634,6 +634,299 @@ _RESPONSE10004 = _descriptor.Descriptor(
   serialized_end=1627,
 )
 
+
+_REQUEST10005_PARAMS = _descriptor.Descriptor(
+  name='Params',
+  full_name='com.xiang.proto.reader.Request10005.Params',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='keyword', full_name='com.xiang.proto.reader.Request10005.Params.keyword', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='index', full_name='com.xiang.proto.reader.Request10005.Params.index', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=571,
+  serialized_end=611,
+)
+
+_REQUEST10005 = _descriptor.Descriptor(
+  name='Request10005',
+  full_name='com.xiang.proto.reader.Request10005',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='common', full_name='com.xiang.proto.reader.Request10005.common', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='params', full_name='com.xiang.proto.reader.Request10005.params', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_REQUEST10005_PARAMS, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1630,
+  serialized_end=1795,
+)
+
+
+_RESPONSE10005_DATA = _descriptor.Descriptor(
+  name='Data',
+  full_name='com.xiang.proto.reader.Response10005.Data',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='organiza', full_name='com.xiang.proto.reader.Response10005.Data.organiza', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='maxCount', full_name='com.xiang.proto.reader.Response10005.Data.maxCount', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1922,
+  serialized_end=1991,
+)
+
+_RESPONSE10005 = _descriptor.Descriptor(
+  name='Response10005',
+  full_name='com.xiang.proto.reader.Response10005',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='common', full_name='com.xiang.proto.reader.Response10005.common', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='com.xiang.proto.reader.Response10005.data', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_RESPONSE10005_DATA, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1798,
+  serialized_end=1991,
+)
+
+
+_REQUEST10006_PARAMS = _descriptor.Descriptor(
+  name='Params',
+  full_name='com.xiang.proto.reader.Request10006.Params',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='category', full_name='com.xiang.proto.reader.Request10006.Params.category', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='articleId', full_name='com.xiang.proto.reader.Request10006.Params.articleId', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='optionType', full_name='com.xiang.proto.reader.Request10006.Params.optionType', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2119,
+  serialized_end=2211,
+)
+
+_REQUEST10006 = _descriptor.Descriptor(
+  name='Request10006',
+  full_name='com.xiang.proto.reader.Request10006',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='common', full_name='com.xiang.proto.reader.Request10006.common', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='params', full_name='com.xiang.proto.reader.Request10006.params', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_REQUEST10006_PARAMS, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1994,
+  serialized_end=2211,
+)
+
+
+_RESPONSE10006_DATA = _descriptor.Descriptor(
+  name='Data',
+  full_name='com.xiang.proto.reader.Response10006.Data',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=375,
+  serialized_end=381,
+)
+
+_RESPONSE10006 = _descriptor.Descriptor(
+  name='Response10006',
+  full_name='com.xiang.proto.reader.Response10006',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='common', full_name='com.xiang.proto.reader.Response10006.common', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='com.xiang.proto.reader.Response10006.data', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_RESPONSE10006_DATA, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2214,
+  serialized_end=2344,
+)
+
 _REQUEST10001_PARAMS.fields_by_name['category'].enum_type = common__pb2._CATEGORY
 _REQUEST10001_PARAMS.containing_type = _REQUEST10001
 _REQUEST10001.fields_by_name['common'].message_type = common__pb2._REQUESTCOMMON
@@ -666,6 +959,20 @@ _RESPONSE10004_DATA.fields_by_name['article'].message_type = common__pb2._ARTICL
 _RESPONSE10004_DATA.containing_type = _RESPONSE10004
 _RESPONSE10004.fields_by_name['common'].message_type = common__pb2._RESPONSECOMMON
 _RESPONSE10004.fields_by_name['data'].message_type = _RESPONSE10004_DATA
+_REQUEST10005_PARAMS.containing_type = _REQUEST10005
+_REQUEST10005.fields_by_name['common'].message_type = common__pb2._REQUESTCOMMON
+_REQUEST10005.fields_by_name['params'].message_type = _REQUEST10005_PARAMS
+_RESPONSE10005_DATA.fields_by_name['organiza'].message_type = common__pb2._ORGANIZE
+_RESPONSE10005_DATA.containing_type = _RESPONSE10005
+_RESPONSE10005.fields_by_name['common'].message_type = common__pb2._RESPONSECOMMON
+_RESPONSE10005.fields_by_name['data'].message_type = _RESPONSE10005_DATA
+_REQUEST10006_PARAMS.fields_by_name['category'].enum_type = common__pb2._CATEGORY
+_REQUEST10006_PARAMS.containing_type = _REQUEST10006
+_REQUEST10006.fields_by_name['common'].message_type = common__pb2._REQUESTCOMMON
+_REQUEST10006.fields_by_name['params'].message_type = _REQUEST10006_PARAMS
+_RESPONSE10006_DATA.containing_type = _RESPONSE10006
+_RESPONSE10006.fields_by_name['common'].message_type = common__pb2._RESPONSECOMMON
+_RESPONSE10006.fields_by_name['data'].message_type = _RESPONSE10006_DATA
 DESCRIPTOR.message_types_by_name['Request10001'] = _REQUEST10001
 DESCRIPTOR.message_types_by_name['Response10001'] = _RESPONSE10001
 DESCRIPTOR.message_types_by_name['Request10002'] = _REQUEST10002
@@ -674,6 +981,10 @@ DESCRIPTOR.message_types_by_name['Request10003'] = _REQUEST10003
 DESCRIPTOR.message_types_by_name['Response10003'] = _RESPONSE10003
 DESCRIPTOR.message_types_by_name['Request10004'] = _REQUEST10004
 DESCRIPTOR.message_types_by_name['Response10004'] = _RESPONSE10004
+DESCRIPTOR.message_types_by_name['Request10005'] = _REQUEST10005
+DESCRIPTOR.message_types_by_name['Response10005'] = _RESPONSE10005
+DESCRIPTOR.message_types_by_name['Request10006'] = _REQUEST10006
+DESCRIPTOR.message_types_by_name['Response10006'] = _RESPONSE10006
 
 Request10001 = _reflection.GeneratedProtocolMessageType('Request10001', (_message.Message,), dict(
 
@@ -794,6 +1105,66 @@ Response10004 = _reflection.GeneratedProtocolMessageType('Response10004', (_mess
   ))
 _sym_db.RegisterMessage(Response10004)
 _sym_db.RegisterMessage(Response10004.Data)
+
+Request10005 = _reflection.GeneratedProtocolMessageType('Request10005', (_message.Message,), dict(
+
+  Params = _reflection.GeneratedProtocolMessageType('Params', (_message.Message,), dict(
+    DESCRIPTOR = _REQUEST10005_PARAMS,
+    __module__ = 'reader_pb2'
+    # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Request10005.Params)
+    ))
+  ,
+  DESCRIPTOR = _REQUEST10005,
+  __module__ = 'reader_pb2'
+  # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Request10005)
+  ))
+_sym_db.RegisterMessage(Request10005)
+_sym_db.RegisterMessage(Request10005.Params)
+
+Response10005 = _reflection.GeneratedProtocolMessageType('Response10005', (_message.Message,), dict(
+
+  Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), dict(
+    DESCRIPTOR = _RESPONSE10005_DATA,
+    __module__ = 'reader_pb2'
+    # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Response10005.Data)
+    ))
+  ,
+  DESCRIPTOR = _RESPONSE10005,
+  __module__ = 'reader_pb2'
+  # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Response10005)
+  ))
+_sym_db.RegisterMessage(Response10005)
+_sym_db.RegisterMessage(Response10005.Data)
+
+Request10006 = _reflection.GeneratedProtocolMessageType('Request10006', (_message.Message,), dict(
+
+  Params = _reflection.GeneratedProtocolMessageType('Params', (_message.Message,), dict(
+    DESCRIPTOR = _REQUEST10006_PARAMS,
+    __module__ = 'reader_pb2'
+    # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Request10006.Params)
+    ))
+  ,
+  DESCRIPTOR = _REQUEST10006,
+  __module__ = 'reader_pb2'
+  # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Request10006)
+  ))
+_sym_db.RegisterMessage(Request10006)
+_sym_db.RegisterMessage(Request10006.Params)
+
+Response10006 = _reflection.GeneratedProtocolMessageType('Response10006', (_message.Message,), dict(
+
+  Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), dict(
+    DESCRIPTOR = _RESPONSE10006_DATA,
+    __module__ = 'reader_pb2'
+    # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Response10006.Data)
+    ))
+  ,
+  DESCRIPTOR = _RESPONSE10006,
+  __module__ = 'reader_pb2'
+  # @@protoc_insertion_point(class_scope:com.xiang.proto.reader.Response10006)
+  ))
+_sym_db.RegisterMessage(Response10006)
+_sym_db.RegisterMessage(Response10006.Data)
 
 
 # @@protoc_insertion_point(module_scope)

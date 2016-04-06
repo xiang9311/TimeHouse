@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^articles/getArticles$', views.getArticles),
     url(r'^articles/collectArticles$', views.collectArticles),
     url(r'^articles/getDetailArticles$', views.getDetailArticles),
-    url(r'^articles/searchArticles', views.searchArticles),
+    url(r'^articles/searchArticles$', views.searchArticles),
+    url(r'^articles/count$', views.count),
 
     # pilot
 

@@ -120,6 +120,7 @@ def collect(userId, articleId, category, optionType):
             c.delete()
     return True
 
+
 def getMyCollects(userId, articles):
     """
     获取我的收藏
