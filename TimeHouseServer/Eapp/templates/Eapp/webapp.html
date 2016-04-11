@@ -3,6 +3,7 @@
     <head>
         {% load staticfiles %}
 		<meta charset="UTF-8">
+        <script type="text/javascript" charset="utf-8" src="{% static 'Eapp/js/jquery-1.7.1.min.js' %}"></script>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<title>A Demo Of Webapp</title>
 		<meta  name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
@@ -17,38 +18,36 @@
 				width: 100%;
 			}
 		</style>
+        <link type="text/css" rel="stylesheet" href="{% static 'Eapp/css/bootstrap.min.css' %}">
 	</head>
 	<body>
 		<div id="container">
 		  <div class="page page-1">
               <h4>标题1</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
+              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
               <img src="{% static 'Eapp/images/sohutv-ios8/1.jpg' %}">
           </div>
 		  <div class="page page-2">
               <h4>标题2</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
+              <p>内容1内容1内容1内容1内容1内容1内容1</p>
               <img src="{% static 'Eapp/images/sohutv-ios8/2.jpg' %}">
           </div>
 		  <div class="page page-3">
               <h4>标题3</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/3.jpg' %}">
+              <p>内容1内容1内容1内容1内容1内容1内容1</p>
+              <img src="{% static 'Eapp/images/sohutv-ios8/2.jpg' %}">
           </div>
 		  <div class="page page-4">
               <h4>标题4</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
+              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
               <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
           </div>
           <div class="page page-5">
               <h4>标题5</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
+              <p>内容1内容1内容1内容1内容1内容1内容1内容1</p>
               <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
-          </div>
-          <div class="page page-6">
-              <h4>标题6</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
+              <a id="dislike" class="btn btn-danger">不喜欢</a>
+              <a id="like" class="btn btn-primary">喜欢</a>
           </div>
 		</div>
 	</body>
@@ -56,5 +55,31 @@
 		var container = document.getElementById('container');
 		var pages = document.querySelectorAll('.page');
 		var slip = Slip(container, 'y').webapp(pages);
+        $('#dislike').click(function() {
+            $.post(
+                "/app/choose",
+                {
+                    option:"dislike"
+                },
+                function(data, status){
+                    if (status == 'success'){
+                        alert('谢谢您的意见');
+                    }
+                }
+            );
+        });
+        $('#like').click(function() {
+            $.post(
+                "/app/choose",
+                {
+                    option:"like"
+                },
+                function(data, status){
+                    if (status == 'success'){
+                        alert('谢谢您的意见');
+                    }
+                }
+            );
+        });
 	</script>
 </html>
