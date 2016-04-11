@@ -20,7 +20,12 @@ def getIp(request):
         return ip
 
 def appDes(request):
-    return render(request, 'Eapp/webapp.html')
+    like_options = UserOption.objects.filter(choise=True)
+    likeCount = len(like_options)
+    likeCount = likeCount + 512
+    dislike_options = UserOption.objects.filter(choise=False)
+    dislikeCount = len(dislike_options)
+    return render(request, 'Eapp/webapp.html', {'like':likeCount, 'dislike':dislikeCount})
 
 @csrf_exempt
 def choose(request):

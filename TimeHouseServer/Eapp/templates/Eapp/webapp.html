@@ -38,6 +38,7 @@
               <p>想去健身房但不知道附近哪（mei）个（zi）好（duo）？</p>
               <img src="{% static 'Eapp/image/0.jpg' %}">
               <p>“有那么一款APP”解决了你的问题！</p>
+              <img src="{% static 'Eapp/image/up.png' %}" style="width: 20px; height: 25px;position: absolute; top: 90vh;left: 50vw;">
           </div>
 		  <div class="page page-2">
               <p>没有朋友一起去健身房感觉寂寞？</p>
@@ -45,28 +46,30 @@
               <p>身材这么棒想要获取更多关注？</p>
               <img src="{% static 'Eapp/image/1.jpg' %}">
               <p>“有那么一款APP”解决了你的问题！</p>
+              <img src="{% static 'Eapp/image/up.png' %}" style="width: 20px; height: 25px;position: absolute; top: 190vh;left: 50vw;">
           </div>
 		  <div class="page page-3">
               <p>“有那么一款APP”为你提供附近健身房信息（妹子数量--san wei，男神颜值）！</p>
               <p>“有那么一款APP”为你提供附近健身房信息（这家健身房器材9成新--9% T-T）！</p>
               <img src="{% static 'Eapp/image/2.jpg' %}">
+              <img src="{% static 'Eapp/image/up.png' %}" style="width: 20px; height: 25px;position: absolute; top: 290vh;left: 50vw;">
           </div>
 		  <div class="page page-4">
               <p>“有那么一款APP”为你提供附近健身圈内社（da）区（shan）平台！</p>
               <p>“有那么一款APP”让身（*）材（*）很（*）棒（*）的你获取很多关注！</p>
               <img src="{% static 'Eapp/image/3.jpg' %}">
-          </div>
-          <div class="page page-5">
-              <p>喜欢“有那么一款”APP吗？</p>
-              <div class="form-group">
-                <input class="form-control" id="word" placeholder="捎句话儿" style="margin: 10px;">
+              <p style="margin-top: 30px">喜欢“有那么一款”APP吗？</p>
+              <div class="form-group" style="margin: 10px">
+                <input class="form-control" id="word" placeholder="捎句话儿（加手机号码，有了会通知你哦）">
               </div>
-              <a id="dislike" class="btn btn-danger" style="margin: 10px">不喜欢</a>
-              <a id="like" class="btn btn-primary" style="margin: 10px">喜欢</a>
+              <a id="dislike" class="btn btn-danger" style="margin: 10px">不喜欢（{{ dislike }}）</a>
+              <a id="like" class="btn btn-primary" style="margin: 10px">喜欢（{{ like }}）</a>
           </div>
 		</div>
 	</body>
 	<script type="text/javascript">
+        var likeCount = {{ like }};
+        var dislikeCount = {{ dislike }};
 		var container = document.getElementById('container');
 		var pages = document.querySelectorAll('.page');
 		var slip = Slip(container, 'y').webapp(pages);
@@ -82,6 +85,8 @@
                         if (data == "choosed"){
                             alert('您已经做出了选择');
                         } else{
+                            dislikeCount ++;
+                            $('#dislike').text("喜欢（"+dislikeCount+"）");
                             alert('谢谢您的意见');
                         }
                     }
@@ -100,6 +105,8 @@
                         if (data == "choosed"){
                             alert('您已经做出了选择');
                         } else{
+                            likeCount ++;
+                            $('#like').text("喜欢（"+likeCount+"）");
                             alert('谢谢您的意见');
                         }
                     }
