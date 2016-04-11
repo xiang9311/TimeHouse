@@ -63,7 +63,11 @@
                 },
                 function(data, status){
                     if (status == 'success'){
-                        alert('谢谢您的意见');
+                        if (data == "choosed"){
+                            alert('您已经做出了选择');
+                        } else{
+                            alert('谢谢您的意见');
+                        }
                     }
                 }
             );
@@ -76,7 +80,11 @@
                 },
                 function(data, status){
                     if (status == 'success'){
-                        alert('谢谢您的意见');
+                        if (data == "choosed"){
+                            alert('您已经做出了选择');
+                        } else{
+                            alert('谢谢您的意见');
+                        }
                     }
                 }
             );
