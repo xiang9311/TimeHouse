@@ -10,45 +10,59 @@
 		<script type="text/javascript" src="{% static 'Eapp/js/min.slip.js' %}"></script>
 		<style type="text/css">
 			body{
-				background-color: #f2f4f5;
+				background-color: #444444;
 				margin: 0;
 				padding: 0;
 			}
 			img{
 				width: 100%;
 			}
+            p{
+                color: #EEE;
+                font-size: large;
+                text-align: center;
+            }
 		</style>
         <link type="text/css" rel="stylesheet" href="{% static 'Eapp/css/bootstrap.min.css' %}">
+        <style type="text/css">
+            p{
+                padding: 20px 10px 10px 10px;
+            }
+		</style>
 	</head>
 	<body>
-		<div id="container">
+		<div id="container" style="background: #444444">
 		  <div class="page page-1">
-              <h4>标题1</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/1.jpg' %}">
+              <p>休息时间都宅在家追剧、打游戏？</p>
+              <p>很久没有健身运动是不是感觉都要生锈了？</p>
+              <p>想去健身房但不知道附近哪（mei）个（zi）好（duo）？</p>
+              <img src="{% static 'Eapp/image/0.jpg' %}">
+              <p>“有那么一款APP”解决了你的问题！</p>
           </div>
 		  <div class="page page-2">
-              <h4>标题2</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/2.jpg' %}">
+              <p>没有朋友一起去健身房感觉寂寞？</p>
+              <p>在健身房遇到妹子（男神）不知道怎么搭讪？</p>
+              <p>身材这么棒想要获取更多关注？</p>
+              <img src="{% static 'Eapp/image/1.jpg' %}">
+              <p>“有那么一款APP”解决了你的问题！</p>
           </div>
 		  <div class="page page-3">
-              <h4>标题3</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/2.jpg' %}">
+              <p>“有那么一款APP”为你提供附近健身房信息（妹子数量--san wei，男神颜值）！</p>
+              <p>“有那么一款APP”为你提供附近健身房信息（这家健身房器材9成新--9% T-T）！</p>
+              <img src="{% static 'Eapp/image/2.jpg' %}">
           </div>
 		  <div class="page page-4">
-              <h4>标题4</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
+              <p>“有那么一款APP”为你提供附近健身圈内社（da）区（shan）平台！</p>
+              <p>“有那么一款APP”让身（*）材（*）很（*）棒（*）的你获取很多关注！</p>
+              <img src="{% static 'Eapp/image/3.jpg' %}">
           </div>
           <div class="page page-5">
-              <h4>标题5</h4>
-              <p>内容1内容1内容1内容1内容1内容1内容1内容1</p>
-              <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
-              <input id="word" class="form-control" placeholder="捎句话儿">
-              <a id="dislike" class="btn btn-danger">不喜欢</a>
-              <a id="like" class="btn btn-primary">喜欢</a>
+              <p>喜欢“有那么一款”APP吗？</p>
+              <div class="form-group">
+                <input class="form-control" id="word" placeholder="捎句话儿" style="margin: 10px;">
+              </div>
+              <a id="dislike" class="btn btn-danger" style="margin: 10px">不喜欢</a>
+              <a id="like" class="btn btn-primary" style="margin: 10px">喜欢</a>
           </div>
 		</div>
 	</body>
