@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <style type="text/css" >
+        img.des{
+            width: 500px;
+            height: 300px;
+            float: left;
+        }
+        div.des-cont{
+            margin-top: 100px;
+        }
+        div.des-text{
+            float: left;
+            width: 370px;
+            height: 300px;
+            display: inline-block;
+        }
+        .left-q{
+            margin-left: 30px;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="{% static 'Eapp/css/bootstrap.min.css' %}">
+    <title>易健身</title>
+</head>
+<body style="background: #444444">
+    <div class="container" style="color: white; margin-top: 30px; margin-bottom: 30px; width: 930px">
+        <div>
+            <h2 style="display: inline">易健身</h2><span>&nbsp;&nbsp;&nbsp;Easy Keep</span>
+        </div>
+        <div class="des-cont">
+            <img class="des" src="{% static 'Eapp/image/test.jpg' %}">
+            <div class="des-text left-q">
+                <h3>介绍标题2</h3>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2</p>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介</p>
+                <div  style="clear: both"></div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div class="des-cont">
+            <div class="des-text">
+                <h3>介绍标题2</h3>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2</p>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介</p>
+            </div>
+            <img class="des left-q" src="{% static 'Eapp/image/test.jpg' %}">
+            <div style="clear: both"></div>
+        </div>
+        <div class="des-cont">
+            <img class="des" src="{% static 'Eapp/image/test.jpg' %}">
+            <div class="des-text left-q">
+                <h3>介绍标题2</h3>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2</p>
+                <p>介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介绍内容2介</p>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div class="des-cont">
+            <h3>app 下载</h3>
+            <div style="margin-top: 20px">
+                <img src="{% static 'Eapp/image/android.png' %}">
+                <a class="btn btn-primary" style="margin-left: 20px">Android App下载</a>
+                <img src="{% static 'Eapp/image/apple.png' %}" style="margin-left: 30px">
+                <a class="btn btn-primary" style="margin-left: 20px">App Store 下载</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

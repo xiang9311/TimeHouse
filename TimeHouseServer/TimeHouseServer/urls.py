@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^server/', include('Background.urls')),
     # web editor
     url(r'^web/', include('WebEditor.urls')),
+    url(r'^app/', include('Eapp.urls')),
 ]

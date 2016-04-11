@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'Background',
     'WebEditor',
+    'Eapp',
 )
 
 MIDDLEWARE_CLASSES = (
