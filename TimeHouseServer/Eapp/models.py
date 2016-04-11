@@ -7,4 +7,5 @@ class UserOption(models.Model):
     """
     ip = models.CharField(max_length=20)
     choise = models.BooleanField()
+    word = models.CharField(max_length=2000)
     choose_time = models.DateTimeField()

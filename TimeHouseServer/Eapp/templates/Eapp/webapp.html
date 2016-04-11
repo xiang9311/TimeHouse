@@ -46,6 +46,7 @@
               <h4>标题5</h4>
               <p>内容1内容1内容1内容1内容1内容1内容1内容1</p>
               <img src="{% static 'Eapp/images/sohutv-ios8/4.jpg' %}">
+              <input id="word" class="form-control" placeholder="捎句话儿">
               <a id="dislike" class="btn btn-danger">不喜欢</a>
               <a id="like" class="btn btn-primary">喜欢</a>
           </div>
@@ -59,7 +60,8 @@
             $.post(
                 "/app/choose",
                 {
-                    option:"dislike"
+                    option : "dislike",
+                    word : $('#word').val()
                 },
                 function(data, status){
                     if (status == 'success'){
@@ -76,7 +78,8 @@
             $.post(
                 "/app/choose",
                 {
-                    option:"like"
+                    option:"like",
+                    word : $('#word').val()
                 },
                 function(data, status){
                     if (status == 'success'){

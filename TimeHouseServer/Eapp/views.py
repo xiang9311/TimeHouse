@@ -25,6 +25,7 @@ def appDes(request):
 @csrf_exempt
 def choose(request):
     user_option = request.POST.get('option', '')
+    word = request.POST.get('word', '')
     if request.session.get('choose', '') == 'choosed':
         return HttpResponse("choosed")
 
@@ -33,6 +34,7 @@ def choose(request):
     if user_option:
         option = UserOption()
         option.ip = getIp(request)
+        option.word = word
         option.choose_time = getDatabaseTimeNow()
         if user_option == 'like':
             option.choise = True
