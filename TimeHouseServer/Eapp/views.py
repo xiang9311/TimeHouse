@@ -25,24 +25,25 @@ def appDes(request):
 @csrf_exempt
 def choose(request):
     user_option = request.POST.get('option', '')
+    if request.session.get('choose', '') == 'choosed':
+        return HttpResponse("choosed")
+
+    request.session['choose'] = 'choosed'
+
     if user_option:
-        user_options = UserOption.objects.filter(ip=getIp(request))
-        if not user_options:
-            option = UserOption()
-            option.ip = getIp(request)
-            option.choose_time = getDatabaseTimeNow()
-            if user_option == 'like':
-                option.choise = True
-                pass
-            elif user_option == 'dislike':
-                option.choise = False
-                pass
-            else:
-                option.choise = True
-                pass
-            option.save()
-        else:
+        option = UserOption()
+        option.ip = getIp(request)
+        option.choose_time = getDatabaseTimeNow()
+        if user_option == 'like':
+            option.choise = True
             pass
+        elif user_option == 'dislike':
+            option.choise = False
+            pass
+        else:
+            option.choise = True
+            pass
+        option.save()
     else:
         pass
     return HttpResponse("ok")
